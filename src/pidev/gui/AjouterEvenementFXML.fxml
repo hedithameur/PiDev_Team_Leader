@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AjouterEvenementFXMLController">
+   <children>
+      <Label layoutX="72.0" layoutY="194.0" text="Nom d'artiste" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="131.0" text="Infos Generales" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="167.0" text="Entrez les details de votre annonce" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nom_artiste" layoutX="72.0" layoutY="213.0" promptText="Nom d'artiste" />
+      <TextField fx:id="nom_spectacle" layoutX="72.0" layoutY="273.0" promptText="Nom de spectacle" />
+      <Label layoutX="72.0" layoutY="249.0" text="Nom d'evenement" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="308.0" text="Date d'evenement" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="71.0" layoutY="331.0" prefHeight="18.0" prefWidth="150.0" />
+      <Label layoutX="247.0" layoutY="308.0" text="Lieu d'evenement" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lieu" layoutX="246.0" layoutY="331.0" promptText="Lieu de spectacle" />
+      <Label layoutX="247.0" layoutY="194.0" text="Nombre Ticket" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre_ticket" layoutX="247.0" layoutY="213.0" promptText="Nombre de Ticket" />
+      <Label layoutX="245.0" layoutY="249.0" text="Prix Ticket" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prix_ticket" layoutX="245.0" layoutY="273.0" promptText="Prix Ticket" />
+      <Button fx:id="btn_choisir_affiche" layoutX="452.0" layoutY="235.0" mnemonicParsing="false" onAction="#ChoisirAffiche" text="Choisir l'affiche" />
+      <Label fx:id="label_affiche" layoutX="438.0" layoutY="202.0" text="Aucun affiche est choisi" textFill="WHITE" />
+      <Button fx:id="btn_confirmer" layoutX="428.0" layoutY="333.0" mnemonicParsing="false" onAction="#btn_confirmer" style="-fx-background-color: #ef6b48;" text="Confimer l'ajout d'event" textFill="#fcfbfb">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Button>
+      <Line endX="61.0" endY="-1.52587890625E-5" layoutX="173.0" layoutY="117.0" startX="-100.0" stroke="#ef6b48" strokeWidth="3.0" />
+      <Line endX="223.5999755859375" endY="-1.52587890625E-5" layoutX="338.0" layoutY="117.0" startX="-100.0" stroke="#faf6f6" strokeWidth="3.0" />
+      <Label layoutX="72.0" layoutY="83.0" text="Cree Evenement" textFill="#ef6b48">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_suivi" layoutX="407.0" layoutY="37.0" mnemonicParsing="false" onAction="#btn_suivi" style="-fx-background-color: #ef6b48;" text="Suivi Event" textFill="#fcfbfb">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_historique" layoutX="491.0" layoutY="37.0" mnemonicParsing="false" onAction="#btn_historique" style="-fx-background-color: #ffffff;" text="Historique" textFill="#ef6b48">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="55.0" fitWidth="62.0" layoutX="65.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/image_2023-02-19_102948460-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="control" layoutX="414.0" layoutY="136.0" text="Label" textFill="#f7f5f5">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
