@@ -143,6 +143,18 @@ public class EvenementService implements InterfaceEvenement<Evenement> {
         }
     }
     
+    public void supprimerParNom(Evenement t) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    String sql = "delete from Evenement where nom=?";
+        try {
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1, t.getNom());
+            ste.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
     public void modifierEvenement(String nom,Evenement e) {
         String sql = "update Evenement set nom=? where id=?";
         try {
