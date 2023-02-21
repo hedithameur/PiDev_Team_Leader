@@ -24,7 +24,7 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) throws Exception {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("Options.fxml"));
-            Scene scene = new Scene(root, 800, 650);
+            Scene scene = new Scene(root, 1000, 600);
             
             primaryStage.setTitle("Gestion Tickets et Commandes");
             primaryStage.setScene(scene);

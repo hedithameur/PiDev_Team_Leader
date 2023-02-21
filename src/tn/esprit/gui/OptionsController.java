@@ -39,7 +39,7 @@ public class OptionsController implements Initializable {
     private void gestionTickets(ActionEvent event) {
         try {
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("AjouterTickets.fxml"));
+            Parent loader = FXMLLoader.load(getClass().getResource("Ticket.fxml"));
             btnTickets.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -48,6 +48,13 @@ public class OptionsController implements Initializable {
 
     @FXML
     private void gestionCommandes(ActionEvent event) {
+        try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("Commande.fxml"));
+            btnTickets.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }

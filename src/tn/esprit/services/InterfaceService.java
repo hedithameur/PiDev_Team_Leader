@@ -12,5 +12,6 @@ import java.util.List;
 public interface InterfaceService <T>{
     public void ajouter(T t);
     public List<T> getAll();
-    //public List<T> findById(int id);
+    public List<T> findById(int id);
+    public List<Integer> getid();
 }
