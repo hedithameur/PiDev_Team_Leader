@@ -107,7 +107,33 @@ public class EvenementService implements InterfaceEvenement<Evenement> {
      System.out.println(ex.getMessage());
      }
     }
-
+public void ajouteraffiche(Evenement t) {
+     
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /* String sql ="insert into evenement(nom,lieu,date,nb_ticket,prix)values('"+t.getNom()+ "','" +t.getLieu()+"','" +t.getDate()+"','" +t.getNb_ticket()+"','" +t.getPrix()+ "')";
+         Statement ste = cnx.createStatement();
+         ste.executeUpdate(sql);*/
+          try {
+         String sql ="insert into evenement(nom,lieu,date,nb_ticket,prix,affiche) values (?,?,?,?,?,?)";
+         
+         PreparedStatement ste;
+      
+             ste = cnx.prepareStatement(sql);
+   
+         
+         ste.setString(1,t.getNom());
+          ste.setString(2,t.getLieu());
+           ste.setDate(3,t.getDate());
+           ste.setInt(4,t.getNb_ticket());
+            ste.setDouble(5,t.getPrix());
+            ste.setString(6,t.getAffiche());
+             ste.executeUpdate();
+          System.out.println("Evenement Ajouté // Affiche");
+            } catch (SQLException ex) {
+             Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+         
+     }
+}
     @Override
     public List<Evenement> affichier() {
      List<Evenement> Events = new ArrayList<>();
@@ -121,7 +147,7 @@ public class EvenementService implements InterfaceEvenement<Evenement> {
          while(res.next())
          {
             
-             Evenement e = new Evenement(res.getString("nom"),res.getString("lieu"),res.getString("date"),res.getInt("nb_ticket"),res.getDouble("prix"));
+             Evenement e = new Evenement(res.getInt("id"),res.getString("nom"),res.getString("lieu"),res.getString("date"),res.getInt("nb_ticket"),res.getDouble("prix"));
          Events.add(e);
          }
      } catch (SQLException ex) {
@@ -129,6 +155,8 @@ public class EvenementService implements InterfaceEvenement<Evenement> {
      }
         return Events;
     }
+    
+    
 
     @Override
     public void supprimer(Evenement t) {
@@ -166,5 +194,19 @@ public class EvenementService implements InterfaceEvenement<Evenement> {
             System.out.println(ex.getMessage());
         }
     }
+    
+     public void modifierEvenement1(String s,String s1,Evenement e) {
+        //String sql = "update Evenement set nom=? where id=?";
+         String sql = "update Evenement set "+s+"=? where id=?";
+        try {
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1,s1);
+            ste.setInt(2,e.getId());
+            ste.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
     
 }

@@ -18,7 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import pidev.entity.Evenement;
+import pidev.entity.commentaire;
 import pidev.services.EvenementService;
+import pidev.services.commentaireService;
 
 /**
  * FXML Controller class
@@ -31,15 +33,15 @@ public class SuiviFXMLController implements Initializable {
     private GridPane grid;
     @FXML
     private Button back;
- EvenementService es = new EvenementService();
+ commentaireService es = new commentaireService();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    try {
-            List<Evenement> Events = es.affichier();
+     try {
+            List<commentaire> Events = es.affichierCommentaire();
             int row = 0;
             int column = 0;
             for (int i = 0; i <3; i++) {
@@ -52,16 +54,17 @@ public class SuiviFXMLController implements Initializable {
                 controller.setEvent(Events.get(i));
 
                 grid.add(pane, column, row);
-                column++;
-                if (column > 1) {
+                row++;
+              /*  if (column > 1) {
                     column = 0;
                     row++;
-                }
+                }*/
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }    
+    }
+        
 
     @FXML
     private void backfunc(ActionEvent event) {

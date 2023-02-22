@@ -3,13 +3,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="154.0" prefWidth="154.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="pidev.gui.EvenementTypeController">
+<AnchorPane id="AnchorPane" prefHeight="105.0" prefWidth="154.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.EvenementTypeController">
      <children>
       <Label fx:id="idLabel" layoutX="13.0" prefHeight="48.0" text="Label" />
-      <Label fx:id="NomLabel" layoutX="13.0" layoutY="23.0" prefHeight="50.0" text="Label" />
-       <Label fx:id="LieuLabel" layoutX="13.0" layoutY="48.0" prefHeight="48.0" text="Label" />
-      <Label fx:id="DateLabel" layoutX="13.0" layoutY="74.0" prefHeight="50.0" text="Label" />
-       <Label fx:id="Nb_ticketLabel" layoutX="13.0" layoutY="98.0" prefHeight="48.0" text="Label" />
-      <Label fx:id="PrixLabel" layoutX="13.0" layoutY="122.0" prefHeight="50.0" text="Label" />
+      <Label fx:id="commentaireLabel" layoutX="13.0" layoutY="40.0" prefHeight="50.0" text="Label" />
    </children>
 </AnchorPane>

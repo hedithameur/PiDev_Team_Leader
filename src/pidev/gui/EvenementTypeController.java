@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import pidev.entity.Evenement;
+import pidev.entity.commentaire;
 
 /**
  * FXML Controller class
@@ -22,15 +23,8 @@ public class EvenementTypeController implements Initializable {
     @FXML
     private Label idLabel;
     @FXML
-    private Label NomLabel;
-    @FXML
-    private Label LieuLabel;
-    @FXML
-    private Label DateLabel;
-    @FXML
-    private Label Nb_ticketLabel;
-    @FXML
-    private Label PrixLabel;
+    private Label commentaireLabel;
+    
 
     /**
      * Initializes the controller class.
@@ -39,12 +33,9 @@ public class EvenementTypeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-     public void setEvent(Evenement e) {
-        idLabel.setText(String.valueOf(e.getId()));
-        NomLabel.setText(e.getNom());
-        LieuLabel.setText(e.getLieu());
-        DateLabel.setText(String.valueOf(e.getDate()));
-        Nb_ticketLabel.setText(String.valueOf(e.getNb_ticket()));
-        PrixLabel.setText(String.valueOf(e.getPrix()));
+     public void setEvent(commentaire c) {
+        idLabel.setText(String.valueOf(c.getId_utilisateur()));
+        commentaireLabel.setText(c.getTexte());
+       
     }
 }

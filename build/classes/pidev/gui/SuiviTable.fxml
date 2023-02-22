@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.SuiviTableController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="865.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.SuiviTableController">
      <children>
-      <AnchorPane layoutX="4.0" layoutY="156.0" prefHeight="88.0" prefWidth="592.0">
-         <children>
-            <TableView fx:id="tblEvents" layoutX="25.0" layoutY="-77.0" prefHeight="216.0" prefWidth="582.0">
-               <columns>
-                   <TableColumn fx:id="idColumn" prefWidth="55.200010776519775" text="ID" />
-                  <TableColumn fx:id="NomColumn" prefWidth="157.59998321533203" text=" Nom" />
-                    <TableColumn fx:id="LieuColumn" minWidth="0.0" prefWidth="88.0" text="Lieu" />
-                  <TableColumn fx:id="DateColumn" prefWidth="100.79998779296875" text="Date" />
-                  <TableColumn fx:id="NombreTicketColumn" prefWidth="90.4000244140625" text="NB TICKET" />
-                  <TableColumn fx:id="prixColumn" prefWidth="103.99993896484375" text="PRIX TICKET" />
-                  
-                     </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-      <Button fx:id="back" layoutX="33.0" layoutY="25.0" mnemonicParsing="false" onAction="#backfunc" text="Back" />
-      <Button fx:id="btnSupp" layoutX="705.0" layoutY="243.0" mnemonicParsing="false" onAction="#GridView" prefHeight="26.0" prefWidth="97.0" text="Supprimer" />
-      <Button fx:id="btnMod" layoutX="704.0" layoutY="205.0" mnemonicParsing="false" onAction="#ModifierTable" prefHeight="26.0" prefWidth="98.0" text="Modifier" />
-      <TextField fx:id="combobox_enter" layoutX="679.0" layoutY="162.0" />
-      <ComboBox fx:id="combobox_id" layoutX="678.0" layoutY="113.0" prefWidth="150.0" visibleRowCount="5" />
-      <Label layoutX="740.0" layoutY="88.0" text="Label" />
+      <AnchorPane layoutY="231.0" prefHeight="88.0" prefWidth="592.0" />
+      <Button fx:id="back" layoutX="782.0" layoutY="36.0" mnemonicParsing="false" onAction="#backfunc" style="-fx-background-color: #ef6d48;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnSupp" layoutX="705.0" layoutY="243.0" mnemonicParsing="false" onAction="#GridView" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #ef6d48;" text="Supprimer" textFill="WHITE" />
+      <Button fx:id="btnMod" layoutX="704.0" layoutY="205.0" mnemonicParsing="false" onAction="#ModifierTable" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: #ef6d48;" text="Modifier" textFill="WHITE" />
+      <TextField fx:id="champ" layoutX="679.0" layoutY="162.0" />
+      <Label layoutX="683.0" layoutY="88.0" text="Entrer le champ à modifier" textFill="#efeeee">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font></Label>
       <AnchorPane layoutX="334.0" layoutY="270.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="combobox_enter1" layoutX="678.0" layoutY="113.0" />
+      <Label layoutX="696.0" layoutY="142.0" text="Entrer la modification" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font></Label>
+      <ImageView fitHeight="73.0" fitWidth="67.0" layoutX="43.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/image_2023-02-19_102948460-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblEvents" layoutX="43.0" layoutY="88.0" prefHeight="216.0" prefWidth="582.0">
+         <columns>
+             <TableColumn fx:id="idColumn" prefWidth="55.200010776519775" text="ID" />
+            <TableColumn fx:id="NomColumn" prefWidth="157.59998321533203" text=" Nom" />
+              <TableColumn fx:id="LieuColumn" minWidth="0.0" prefWidth="88.0" text="Lieu" />
+            <TableColumn fx:id="DateColumn" prefWidth="100.79998779296875" text="Date" />
+            <TableColumn fx:id="NombreTicketColumn" prefWidth="90.4000244140625" text="NB TICKET" />
+            <TableColumn fx:id="prixColumn" prefWidth="103.99993896484375" text="PRIX TICKET" />
+            
+                     </columns>
+      </TableView>
    </children>
 </AnchorPane>

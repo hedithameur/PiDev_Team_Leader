@@ -28,8 +28,8 @@ public class EventFXMain extends Application {
   @Override
     public void start(Stage primaryStage) throws Exception {
         try{
-       Parent root = FXMLLoader.load(getClass().getResource("../gui/AjouterEvenementFXML.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("../gui/SuiviFXML.fxml"));
+       //Parent root = FXMLLoader.load(getClass().getResource("../gui/AjouterEvenementFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../gui/CommentaireFXML.fxml"));
         Scene scene = new Scene(root,900,600); 
         primaryStage.setTitle("Ajouter Evenement");
         primaryStage.setScene(scene);

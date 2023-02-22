@@ -5,8 +5,12 @@
  */
 package pidev.gui;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -23,9 +27,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pidev.entity.Evenement;
 import pidev.services.EvenementService;
@@ -62,6 +69,7 @@ public class AjouterEvenementFXMLController implements Initializable {
     @FXML
     private Label control;
 EvenementService es = new EvenementService();
+String nomPath;
 
     /**
      * Initializes the controller class.
@@ -69,10 +77,23 @@ EvenementService es = new EvenementService();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
 
     @FXML
     private void ChoisirAffiche(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+            File file = fileChooser.showOpenDialog(new Stage());
+            if (file != null) {
+                label_affiche.setText(file.getAbsolutePath());
+               
+                try {
+                    Path path = Paths.get(file.getAbsolutePath());
+                    byte[] fichier = Files.readAllBytes(path);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
     }
 
     @FXML
@@ -98,7 +119,8 @@ EvenementService es = new EvenementService();
         e.setLieu(lieu.getText());
         e.setNb_ticket(Integer.parseInt(nombre_ticket.getText()));
         e.setPrix(Double.parseDouble(prix_ticket.getText()));
-        
+        e.setAffiche(label_affiche.getText());
+        System.out.println(label_affiche.getText());
         
         
        //SimpleDateFormat date_format = new SimpleDateFormat("yyyy-mm-dd");
@@ -109,7 +131,9 @@ EvenementService es = new EvenementService();
         System.out.println(datestr);
        // e.setDate(Date.valueOf(date_string));
        e.setDate(Date.valueOf(datestr));
-        es.ajouter(e);
+        es.ajouteraffiche(e);
+        
+        
         reset();
     }}
        

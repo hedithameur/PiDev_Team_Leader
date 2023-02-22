@@ -19,6 +19,7 @@ public class Evenement {
     private String nom,lieu;
     private double prix;
     Date date;
+    String affiche;
    // SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     //SimpleDateFormat formater = new SimpleDateFormat("yyyy-mm-dd");
     //String dateF=formater.format(date);
@@ -36,6 +37,27 @@ public class Evenement {
          
         this.nb_ticket=nb_ticket;
         this.prix=prix;
+    }
+    public Evenement(int id,String nom,String lieu,String date,int nb_ticket,double prix,String affiche){
+        this.id=id;
+        this.nom=nom;
+        this.lieu=lieu;
+        
+      
+         this.date=Date.valueOf(date);
+        
+         
+        this.nb_ticket=nb_ticket;
+        this.prix=prix;
+        this.affiche=affiche;
+    }
+
+    public String getAffiche() {
+        return affiche;
+    }
+
+    public void setAffiche(String affiche) {
+        this.affiche = affiche;
     }
         public Evenement(String nom,String lieu,String date,int nb_ticket,double prix){
         this.nom=nom;
