@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="769.0" style="-fx-background-color: #98AFC7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichemodifsuppController">
+   <children>
+      <TableView fx:id="tabuser" layoutX="233.0" layoutY="166.0" onMouseClicked="#handlemouseaction" onSort="#affichetab" prefHeight="191.0" prefWidth="529.0">
+        <columns>
+          <TableColumn fx:id="idtab" prefWidth="27.0" text="id" />
+          <TableColumn fx:id="nomtab" prefWidth="59.0" text="nom" />
+            <TableColumn fx:id="prenomtab" prefWidth="78.0" text="prenom" />
+            <TableColumn fx:id="roletab" prefWidth="71.0" text="role" />
+            <TableColumn fx:id="teltab" prefWidth="100.0" text="telephone" />
+            <TableColumn fx:id="emailtab" prefWidth="97.0" text="email" />
+            <TableColumn fx:id="mdptab" prefWidth="93.0" text="mot_de_passe" />
+        </columns>
+      </TableView>
+      <Label layoutX="316.0" layoutY="18.0" prefHeight="36.0" prefWidth="162.0" text="BONJOUR ADMIN">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnmodifier" layoutX="383.0" layoutY="447.0" mnemonicParsing="false" onAction="#modifier" prefHeight="29.0" prefWidth="82.0" text="Modifier">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnsupprimer" layoutX="524.0" layoutY="447.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="15.0" layoutY="153.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="202.0" text="Prenom">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="253.0" text="Role">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="306.0" text="Telephone">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="355.0" text="Email">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="404.0" text="MDP">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="102.0" text="ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idaffiche" disable="true" layoutX="77.0" layoutY="98.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="nomaffiche" layoutX="77.0" layoutY="149.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="prenomaffiche" layoutX="77.0" layoutY="198.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="roleaffiche" layoutX="77.0" layoutY="249.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="telaffiche" layoutX="77.0" layoutY="302.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="emailaffiche" layoutX="77.0" layoutY="351.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField fx:id="mdpaffiche" layoutX="77.0" layoutY="400.0" prefHeight="25.0" prefWidth="133.0" />
+      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="66.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/331138388_3312656389000175_6880877511453618278_n-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

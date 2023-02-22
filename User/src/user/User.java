@@ -18,8 +18,13 @@ public class User {
     public static void main(String[] args) {
        
         UtilisateurService us = new UtilisateurService();
-        Utilisateur u = new Utilisateur("hmidi", "mayar", "artiste", 26382407 ,"mayar@gmail.com","mm12");
+        Utilisateur u = new Utilisateur("slimi", "rahma", "admin", 222222 ,"slimi@gmail.com","admin123");
         us.ajouter(u);
+        
+        Utilisateur u1 = new Utilisateur(10,"slimi", "rahma", "admin", 222222 ,"slimi@gmail.com","admin123");
+        us.modifierUtilisateur("xxx","hedi","hedi9@gmail.com", u);
+        
+        us.supprimerUtilisateur(u1);
     }
     
 }

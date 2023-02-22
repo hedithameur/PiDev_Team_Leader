@@ -4,6 +4,16 @@ package entity;
 
  
 public class Utilisateur {
+
+    public Utilisateur(int id, String nom, String prenom, String role, int telephone, String email, String mot_de_passe) {
+        this.id = id;
+        this.telephone = telephone;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.role = role;
+        this.email = email;
+        this.mot_de_passe = mot_de_passe;
+    }
     
      private int id;
      private int telephone;

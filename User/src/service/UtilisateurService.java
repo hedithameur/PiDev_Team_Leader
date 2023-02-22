@@ -21,6 +21,7 @@ import java.awt.event.ActionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import javafx.scene.control.ComboBox;
 
 
 public class UtilisateurService implements InterfService<Utilisateur> { 
@@ -62,10 +63,10 @@ public class UtilisateurService implements InterfService<Utilisateur> {
             Statement ste = cnx.createStatement();
             ResultSet s = ste.executeQuery(sql);
             while (s.next()) {
+               
+                Utilisateur u = new Utilisateur(s.getInt("id"), s.getString("nom"), 
+                s.getString("prenom"), s.getString("role"),s.getInt("telephone"), s.getString("email"), s.getString("mot_de_passe"));
                 
-               ///
-                
-                Utilisateur u = new Utilisateur();
                 utilisateurs.add(u);
 
             }
@@ -75,21 +76,21 @@ public class UtilisateurService implements InterfService<Utilisateur> {
         }
         return utilisateurs;
     }
+   
 
-    @Override
-    public List<Utilisateur> findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
     
-    public void modifierUtilisateur(String nom,Utilisateur u) {
-        String sql = "update utilisateur set nom=? where id=?";
+    public void modifierUtilisateur(String nom,String prenom, String email, Utilisateur u) {
+        String sql = "update utilisateur set nom=?,prenom=?,email=? where id=?";
         try {
             PreparedStatement ste = cnx.prepareStatement(sql);
             ste.setString(1, nom);
-            ste.setInt(2,u.getId());
+             ste.setString(2, prenom);
+             ste.setString(3, email);
+            ste.setInt(4,u.getId());
             ste.executeUpdate();
             System.out.println("Utilisateur modifié ");
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
