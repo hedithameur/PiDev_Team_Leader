@@ -35,18 +35,20 @@ public class PiDev {
         System.out.println(mc3);
         System.out.println(mc);*/
     
-   // Evenement e = new Evenement("Samir Lousif","Hammamet","2023-02-21",200,70.0);
-   //EvenementService es =new EvenementService();
-   //es.ajouter(e);
+   Evenement e = new Evenement("Samir Lousif","Hammamet","2023-02-21",200,70.0,"c://photo");
+   EvenementService es =new EvenementService();
+   
+  es.ajouteraffiche(e);
+   
     //es.modifierEvenement("Sanfara",e);
    
-  // es.supprimer(e);
+ // es.supprimer(e);
     //System.out.println(es.affichier());
    /*-------------------------------------------------------------------------------------------------*/     
-   commentaire c = new commentaire(1,"Worth 10 Dinars");
-       commentaireService cs =new commentaireService();
+   //commentaire c = new commentaire(1,"Worth 10 Dinars");
+      // commentaireService cs =new commentaireService();
       //  cs.ajouterCommentaire(c);
-        System.out.println(cs.affichierCommentaire());
+       // System.out.println(cs.affichierCommentaire());
       // cs.supprimerCommentaire(c);
      //  cs.modifierCommentaire(" top des tops",c);
      //  System.out.println(cs.affichierCommentaire());

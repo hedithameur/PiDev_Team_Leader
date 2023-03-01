@@ -84,7 +84,7 @@
       </Button>
       <ImageView fitHeight="55.0" fitWidth="62.0" layoutX="65.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Downloads/image_2023-02-19_102948460-removebg-preview.png" />
+            <Image url="@image_2023-02-19_102948460-removebg-preview.png" />
          </image>
       </ImageView>
       <Label fx:id="control" layoutX="414.0" layoutY="136.0" text="Label" textFill="#f7f5f5">

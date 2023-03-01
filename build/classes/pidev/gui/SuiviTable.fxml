@@ -43,5 +43,7 @@
             
                      </columns>
       </TableView>
+      <Button fx:id="btnPrint" layoutX="705.0" layoutY="280.0" mnemonicParsing="false" onAction="#Print" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #ef6d48;" text="Print" textFill="WHITE" />
+      <Button fx:id="btnStat" layoutX="705.0" layoutY="319.0" mnemonicParsing="false" onAction="#StatistiqueLieu" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: #ef6d48;" text="Stat" textFill="WHITE" />
    </children>
 </AnchorPane>

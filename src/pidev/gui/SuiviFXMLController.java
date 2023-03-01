@@ -70,4 +70,6 @@ public class SuiviFXMLController implements Initializable {
     private void backfunc(ActionEvent event) {
     }
     
+    
+    
 }

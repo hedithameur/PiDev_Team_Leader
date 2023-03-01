@@ -51,6 +51,20 @@ public class Evenement {
         this.prix=prix;
         this.affiche=affiche;
     }
+    
+    public Evenement(String nom,String lieu,String date,int nb_ticket,double prix,String affiche){
+        
+        this.nom=nom;
+        this.lieu=lieu;
+        
+      
+         this.date=Date.valueOf(date);
+        
+         
+        this.nb_ticket=nb_ticket;
+        this.prix=prix;
+        this.affiche=affiche;
+    }
 
     public String getAffiche() {
         return affiche;

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javax.activation.DataSource;
 import pidev.entity.Evenement;
 import pidev.tools.MaConnection;
 
@@ -161,10 +164,10 @@ public void ajouteraffiche(Evenement t) {
     @Override
     public void supprimer(Evenement t) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    String sql = "delete from Evenement where id=?";
+    String sql = "delete from Evenement where nom=?";
         try {
             PreparedStatement ste = cnx.prepareStatement(sql);
-            ste.setInt(1, t.getId());
+            ste.setString(1, t.getNom());
             ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -207,6 +210,30 @@ public void ajouteraffiche(Evenement t) {
             System.out.println(ex.getMessage());
         }
     }
+     public int rowEvent(){
+        ObservableList<Evenement> liste = FXCollections.observableArrayList();
+        int i=0;
+        try {
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     
-    
+         sql="select * from Evenement";
+         Statement ste =cnx.createStatement();
+         ResultSet res = ste.executeQuery(sql);
+         
+         while(res.next())
+         {
+               i=i+1;
+            }
+            
+           
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+ return i;
+        
+     }
 }
+    
+    
+     
+
