@@ -19,14 +19,14 @@ public class Evenement {
     private String nom,lieu;
     private double prix;
     Date date;
-    String affiche;
+    public String af;
    // SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     //SimpleDateFormat formater = new SimpleDateFormat("yyyy-mm-dd");
     //String dateF=formater.format(date);
     public Evenement(){
         
     }
-    public Evenement(int id,String nom,String lieu,String date,int nb_ticket,double prix){
+   /* public Evenement(int id,String nom,String lieu,String date,int nb_ticket,double prix){
         this.id=id;
         this.nom=nom;
         this.lieu=lieu;
@@ -37,22 +37,20 @@ public class Evenement {
          
         this.nb_ticket=nb_ticket;
         this.prix=prix;
-    }
-    public Evenement(int id,String nom,String lieu,String date,int nb_ticket,double prix,String affiche){
+    }*/
+    public Evenement(int id,String nom,String lieu,String date,int nb_ticket,double prix,String a){
         this.id=id;
         this.nom=nom;
         this.lieu=lieu;
         
       
          this.date=Date.valueOf(date);
-        
-         
         this.nb_ticket=nb_ticket;
         this.prix=prix;
-        this.affiche=affiche;
+        this.af=a;
     }
     
-    public Evenement(String nom,String lieu,String date,int nb_ticket,double prix,String affiche){
+   public Evenement(String nom,String lieu,String date,int nb_ticket,double prix,String a){
         
         this.nom=nom;
         this.lieu=lieu;
@@ -63,15 +61,20 @@ public class Evenement {
          
         this.nb_ticket=nb_ticket;
         this.prix=prix;
-        this.affiche=affiche;
+        this.af=a;
     }
+  /* public Evenement(String affiche){
+        
+        
+        this.affiche=affiche;
+    }*/
 
     public String getAffiche() {
-        return affiche;
+        return af;
     }
 
-    public void setAffiche(String affiche) {
-        this.affiche = affiche;
+    public void setAffiche(String a) {
+        this.af = a;
     }
         public Evenement(String nom,String lieu,String date,int nb_ticket,double prix){
         this.nom=nom;
@@ -132,7 +135,9 @@ public class Evenement {
 
     @Override
     public String toString() {
-        return "Evenement{" + "id=" + id + ", nb_ticket=" + nb_ticket + ", date=" + date + ", nom=" + nom + ", lieu=" + lieu + ", prix=" + prix + '}';
+        return "Evenement{" + "id=" + id + ", nb_ticket=" + nb_ticket + ", nom=" + nom + ", lieu=" + lieu + ", prix=" + prix + ", date=" + date + ", af=" + af + '}';
     }
+
+   
     
 }

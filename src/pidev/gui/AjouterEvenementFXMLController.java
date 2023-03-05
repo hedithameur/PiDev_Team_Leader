@@ -6,7 +6,12 @@
 package pidev.gui;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -81,19 +86,47 @@ String nomPath;
     }    
 
     @FXML
-    private void ChoisirAffiche(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showOpenDialog(new Stage());
-            if (file != null) {
-                label_affiche.setText(file.getAbsolutePath());
-               
-                try {
-                    Path path = Paths.get(file.getAbsolutePath());
-                    byte[] fichier = Files.readAllBytes(path);
-                } catch (IOException e) {
-                    e.printStackTrace();
+    private void ChoisirAffiche(ActionEvent event) throws FileNotFoundException, IOException {
+        FileChooser fc = new FileChooser();
+        //fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", listFichier));
+        File f = fc.showOpenDialog(null);
+        if (f != null) {
+
+            //Commentaire.setText("Image selectionnée" + f.getAbsolutePath());
+            InputStream is = null;
+            OutputStream os = null;
+            try {
+                
+                is = new FileInputStream(new File(f.getAbsolutePath()));
+//             
+                os = new FileOutputStream(new File("C:\\Users\\21650\\Desktop\\PiDev\\src\\pidev\\ressources\\" + f.getName()));
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = is.read(buffer)) > 0) {
+                    os.write(buffer, 0, length);
                 }
+                System.out.println("Done");
+
+            } finally {
+                is.close();
+                os.close();
+
             }
+
+            File file = new File("/ressources/" + f.getName());
+//            System.out.println(file.toURI().toString());
+            //UserImg.setImage(new Image(file.toURI().toString()));
+            String Imguser = f.getName();
+           System.out.println(Imguser);
+            //ImageName.setText(Imguser);
+        } else if (f == null) {
+            //Commentaire.setText("Erreur chargement de l'image");
+            System.out.println("Erreur !");
+        }
+        
+        
+                label_affiche.setText("/ressources/" + f.getName());
+
     }
 
     @FXML

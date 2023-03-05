@@ -150,14 +150,35 @@ public void ajouteraffiche(Evenement t) {
          while(res.next())
          {
             
-             Evenement e = new Evenement(res.getInt("id"),res.getString("nom"),res.getString("lieu"),res.getString("date"),res.getInt("nb_ticket"),res.getDouble("prix"));
-         Events.add(e);
+             Evenement e = new Evenement(res.getInt("id"),res.getString("nom"),res.getString("lieu"),res.getString("date"),res.getInt("nb_ticket"),res.getDouble("prix"),res.getString("affiche"));
+         System.out.println(res.getString("affiche"));
+             Events.add(e);
          }
      } catch (SQLException ex) {
          Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
      }
         return Events;
     }
+   /* public List<Evenement> affichier1() {
+     List<Evenement> Events = new ArrayList<>();
+        try {
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+         sql="select * from Evenement";
+         Statement ste =cnx.createStatement();
+         ResultSet res = ste.executeQuery(sql);
+         
+         while(res.next())
+         {
+            
+             Evenement e = new Evenement(res.getString("affiche"));
+         Events.add(e);
+         }
+     } catch (SQLException ex) {
+         Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+     }
+        return Events;
+    }*/
     
     
 

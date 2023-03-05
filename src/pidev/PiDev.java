@@ -43,7 +43,7 @@ public class PiDev {
     //es.modifierEvenement("Sanfara",e);
    
  // es.supprimer(e);
-    //System.out.println(es.affichier());
+   System.out.println(es.affichier());
    /*-------------------------------------------------------------------------------------------------*/     
    //commentaire c = new commentaire(1,"Worth 10 Dinars");
       // commentaireService cs =new commentaireService();

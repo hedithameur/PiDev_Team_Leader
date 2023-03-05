@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AcceuilController">
+   <children>
+      <ScrollPane layoutX="101.0" layoutY="160.0" prefHeight="500.0" prefWidth="900.0">
+         <content>
+            <HBox fx:id="cardLayout" prefHeight="500.0" prefWidth="900.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
