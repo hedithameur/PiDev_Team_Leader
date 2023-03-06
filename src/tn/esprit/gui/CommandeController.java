@@ -5,6 +5,15 @@
  */
 package tn.esprit.gui;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.draw.LineSeparator;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -69,6 +78,8 @@ public class CommandeController implements Initializable {
     private Button Reset;
     CommandeService ps = new CommandeService();
     Commande p = new Commande();
+    @FXML
+    private Button pdfbtn;
     
 
     /**
@@ -194,6 +205,53 @@ public class CommandeController implements Initializable {
         tabcommande.setItems(list);
     }
 
+    @FXML
+    private void pdf(ActionEvent event) throws IOException, DocumentException {
+        Commande c = new Commande();
+        c = tabcommande.getSelectionModel().getSelectedItem();
+        Document document = new Document();
+        if (nom_evenement.getText().isEmpty()||prix.getText().isEmpty() ||id_ticket.getText().isEmpty() ||id_utilisateur.getText().isEmpty()){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("Impression non effectue");
+            alert.setContentText("Click Cancel to exit.");
+            alert.showAndWait();
+        }else{
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Commande.pdf"));
+            document.open();
+            com.itextpdf.text.Font font = new com.itextpdf.text.Font();
+            font.setSize(20);
+            font.setColor(BaseColor.GREEN);
+            font.isBold();
+            font.isItalic();
+
+            com.itextpdf.text.Font fontSmall = new com.itextpdf.text.Font();
+            fontSmall.setSize(8);
+            document.add(new LineSeparator());
+
+            document.add(new Paragraph("Commande", font));
+            document.add(new Paragraph(" "));
+
+            document.add(new LineSeparator());
+
+            document.add(new Paragraph("Identifiant : " + c.getId()));
+            document.add(new Paragraph("Nom Evenement : " + c.getNom_evenement()));
+            document.add(new Paragraph("Prix : " + c.getPrix()));
+            document.add(new Paragraph("Id_Ticket : " + c.getId_ticket()));
+            document.add(new Paragraph("Id_User : " + c.getId_utilisateur()));
+            document.add(new Paragraph(" "));
+
+            document.newPage();
+            document.close();
+
+            writer.close();
+
+            Desktop.getDesktop().open(new File("Commande.pdf"));
+        }
+    }
+
 }
+
+
 
     

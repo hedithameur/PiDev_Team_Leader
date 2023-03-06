@@ -14,8 +14,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.TextField;
+import javax.management.Query;
 import tn.esprit.tools.MaConnection;
 import tn.esprit.entity.Ticket;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -61,7 +63,7 @@ public class TicketService implements InterfaceService<Ticket>  {
         }
         return tickets;
     }
-
+    
     /*@Override
     public List<Ticket> findById(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -30,7 +30,7 @@ public class Pidev {
      */
     public static void main(String[] args) {
         //TicketService t = new TicketService();
-        //Ticket t1 = new Ticket(17,45,15,"VIP",1);
+       ///Ticket t1 = new Ticket(17,45,15,"VIP",1);
         //t.ajouter(t1);
         //t.supprimerTicket(t1);
         //t.modifierTicket(10,10,"vip",t1);

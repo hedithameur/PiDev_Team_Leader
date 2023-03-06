@@ -33,5 +33,6 @@
         </columns>
       </TableView>
       <Button fx:id="Reset" layoutX="280.0" layoutY="273.0" mnemonicParsing="false" onAction="#Reset" text="Reset" />
+      <Button fx:id="pdfbtn" layoutX="24.0" layoutY="349.0" mnemonicParsing="false" onAction="#pdf" text="pdf" />
    </children>
 </AnchorPane>

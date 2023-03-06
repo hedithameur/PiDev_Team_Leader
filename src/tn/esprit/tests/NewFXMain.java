@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tn.esprit.gui;
+package tn.esprit.tests;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -23,7 +23,7 @@ public class NewFXMain extends Application {
    @Override
     public void start(Stage primaryStage) throws Exception {
          try {
-            Parent root = FXMLLoader.load(getClass().getResource("Options.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/tn/esprit/gui/Options.fxml"));
             Scene scene = new Scene(root, 1000, 600);
             
             primaryStage.setTitle("Gestion Tickets et Commandes");
