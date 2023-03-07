@@ -40,6 +40,7 @@ import java.io.FileNotFoundException;
 import java.sql.*;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.EventHandler;
+import javafx.scene.control.DatePicker;
 import javafx.scene.input.TouchEvent;
 import javafx.stage.FileChooser;
 import javax.imageio.ImageIO;
@@ -79,18 +80,16 @@ public class EmptyyController implements Initializable {
     private PasswordField textmotdepasse;
     @FXML
     private Button btnseconnecter2;
-    @FXML
-    
-
-     UtilisateurService us=new UtilisateurService();
+    UtilisateurService us=new UtilisateurService();
      Utilisateur u= new Utilisateur();
      
     @FXML
     private Button afficher;
     @FXML
     private ComboBox<String> comb;
-    
     @FXML
+    private DatePicker date;
+    
     
      
     @Override
@@ -108,18 +107,7 @@ public class EmptyyController implements Initializable {
    
   
      
-    @FXML
-    private void gotologin(ActionEvent event) {
-        
-        try {
-            
-            Parent loader = FXMLLoader.load(getClass().getResource("Login.fxml"));
-            btnseconnecter2.getScene().setRoot(loader);
-        } 
-        catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+   
 
     private void affichetable() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -128,28 +116,85 @@ public class EmptyyController implements Initializable {
     @FXML
     private void sinscrire(ActionEvent event) {
         
-          if (textnom.getText().isEmpty()||textprenom.getText().isEmpty()
-         ||textemail.getText().isEmpty()|| texttel.getText().isEmpty()||textmotdepasse.getText().isEmpty()
-           )
+          if (textnom.getText().isEmpty())
               
         {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("NOT OK");
-            alert.setHeaderText("Ajout non effectué");
+            alert.setHeaderText("veuillez saisir votre NOM");
             alert.setContentText("Click cancel to exit.");
             alert.showAndWait();
             
         }
+          if (textprenom.getText().isEmpty())
+              
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("veuillez saisir votre PRENOM");
+            alert.setContentText("Click cancel to exit.");
+            alert.showAndWait();
+            
+        }
+          if (texttel.getText().isEmpty())
+              
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("veuillez saisir votre TELEPHONE");
+            alert.setContentText("Click cancel to exit.");
+            alert.showAndWait();
+            
+        }
+          
+          if (textemail.getText().isEmpty())
+              
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("veuillez saisir votre EMAIL");
+            alert.setContentText("Click cancel to exit.");
+            alert.showAndWait();
+            
+        }
+          if (textmotdepasse.getText().isEmpty())
+              
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("veuillez saisir votre MOT DE PASSE");
+            alert.setContentText("Click cancel to exit.");
+            alert.showAndWait();
+            
+        }
+         
+          if(texttel.getLength()!=8) {
+              
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("NOT OK");
+            alert.setHeaderText("Numéro de téléphone incorrecte ! veuillez saisir 8 chiffres");
+            alert.setContentText("Click cancel to exit.");
+            alert.showAndWait();
+        }
+           if (!textemail.getText().contains("@")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("L'adresse e-mail doit contenir un '@'.");
+            alert.showAndWait();
+        }
         
         else{
+            //  selectionUtilisateur=textemail.getSelectedText()
         u.setNom(textnom.getText());
         u.setPrenom(textprenom.getText());
         u.setRole(comb.getValue());
         u.setEmail(textemail.getText());
         u.setTelephone(Integer.parseInt(texttel.getText()));
         u.setMot_de_passe(textmotdepasse.getText());
+        u.setdateNaiss(date.getValue());
         us.ajouter(u);
-        //affichetable();
+        
         reset();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("OK");
@@ -174,9 +219,6 @@ public class EmptyyController implements Initializable {
         
     }
 
-    @FXML
-    private void touch(TouchEvent event) {
-    }
 
         
     }

@@ -1,11 +1,14 @@
 
 package entity;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 
  
 public class Utilisateur {
 
-    public Utilisateur(int id, String nom, String prenom, String role, int telephone, String email, String mot_de_passe) {
+    public Utilisateur(int id, String nom, String prenom, String role, int telephone, String email, String mot_de_passe, LocalDate dateNaiss) {
         this.id = id;
         this.telephone = telephone;
         this.nom = nom;
@@ -13,18 +16,21 @@ public class Utilisateur {
         this.role = role;
         this.email = email;
         this.mot_de_passe = mot_de_passe;
+        
+        this.dateNaiss= dateNaiss;
     }
     
      private int id;
      private int telephone;
-    private String nom, prenom, role, email, mot_de_passe;
+     private String nom, prenom, role, email, mot_de_passe;
+     private LocalDate dateNaiss;
     
     
     
     public Utilisateur(){}
     
     
-    public Utilisateur(String nom, String prenom, String role, int telephone, String email, String mot_de_passe){
+    public Utilisateur(String nom, String prenom, String role, int telephone, String email, String mot_de_passe, LocalDate dateNaiss){
     
         
         this.nom=nom;
@@ -33,7 +39,7 @@ public class Utilisateur {
         this.telephone=telephone;
         this.email=email;
         this.mot_de_passe=mot_de_passe;
-        
+        this.dateNaiss=dateNaiss;
        
     }
 
@@ -93,10 +99,19 @@ public class Utilisateur {
     public void setMot_de_passe(String mot_de_passe) {
         this.mot_de_passe = mot_de_passe;
     }
+    public LocalDate getdateNaiss() {
+        
+        return dateNaiss;
+    }
+
+    public void setdateNaiss(LocalDate dateNaiss) {
+        this.dateNaiss = dateNaiss;
+    }
 
     @Override
     public String toString() {
-        return "Utilisateur{" + "id=" + id + ", telephone=" + telephone + ", nom=" + nom + ", prenom=" + prenom + ", role=" + role + ", email=" + email + ", mot_de_passe=" + mot_de_passe + '}';
+        return "Utilisateur{" + "id=" + id + ", telephone=" + telephone + ", nom=" + nom + ", prenom=" + prenom + ", role=" + role + ", email=" + email + ", mot_de_passe=" + mot_de_passe  
+                + ", dateNaiss=" + dateNaiss+ '}';
     }
     
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AdminloginController">
+   <children>
+      <Label layoutX="103.0" layoutY="138.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="200.0" text="Mot de passe" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="email" layoutX="226.0" layoutY="134.0" />
+      <PasswordField fx:id="mdps" layoutX="226.0" layoutY="196.0" />
+      <Button fx:id="login" layoutX="268.0" layoutY="260.0" mnemonicParsing="false" onAction="#loginadmin" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #ef6b48;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Label layoutX="217.0" layoutY="34.0" prefHeight="27.0" prefWidth="139.0" text="Bonjour Admin" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="73.0" fitWidth="65.0" layoutX="507.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

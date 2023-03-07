@@ -5,22 +5,20 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="769.0" style="-fx-background-color: #98AFC7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichemodifsuppController">
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="769.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichemodifsuppController">
    <children>
-      <TableView fx:id="tabuser" layoutX="233.0" layoutY="166.0" onMouseClicked="#handlemouseaction" onSort="#affichetab" prefHeight="191.0" prefWidth="529.0">
+      <TableView fx:id="tabuser" layoutX="244.0" layoutY="158.0" onMouseClicked="#handlemouseaction" onSort="#affichetab" prefHeight="191.0" prefWidth="518.0">
         <columns>
-          <TableColumn fx:id="idtab" prefWidth="27.0" text="id" />
-          <TableColumn fx:id="nomtab" prefWidth="59.0" text="nom" />
-            <TableColumn fx:id="prenomtab" prefWidth="78.0" text="prenom" />
-            <TableColumn fx:id="roletab" prefWidth="71.0" text="role" />
-            <TableColumn fx:id="teltab" prefWidth="100.0" text="telephone" />
-            <TableColumn fx:id="emailtab" prefWidth="97.0" text="email" />
-            <TableColumn fx:id="mdptab" prefWidth="93.0" text="mot_de_passe" />
+          <TableColumn fx:id="idtab" prefWidth="21.0" text="id" />
+          <TableColumn fx:id="nomtab" prefWidth="45.0" text="nom" />
+            <TableColumn fx:id="prenomtab" prefWidth="92.0" text="prenom" />
+            <TableColumn fx:id="roletab" prefWidth="84.0" text="role" />
+            <TableColumn fx:id="teltab" prefWidth="86.0" text="telephone" />
+            <TableColumn fx:id="emailtab" prefWidth="93.0" text="email" />
+            <TableColumn fx:id="mdptab" prefWidth="107.0" text="mot_de_passe" />
         </columns>
       </TableView>
       <Label layoutX="316.0" layoutY="18.0" prefHeight="36.0" prefWidth="162.0" text="BONJOUR ADMIN">
@@ -80,10 +78,11 @@
       <TextField fx:id="telaffiche" layoutX="77.0" layoutY="302.0" prefHeight="25.0" prefWidth="133.0" />
       <TextField fx:id="emailaffiche" layoutX="77.0" layoutY="351.0" prefHeight="25.0" prefWidth="133.0" />
       <TextField fx:id="mdpaffiche" layoutX="77.0" layoutY="400.0" prefHeight="25.0" prefWidth="133.0" />
-      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="66.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Downloads/331138388_3312656389000175_6880877511453618278_n-removebg-preview.png" />
-         </image>
-      </ImageView>
+      <TextField fx:id="recherche" layoutX="424.0" layoutY="73.0" promptText="recherche" />
+      <Button fx:id="exit" layoutX="667.0" layoutY="447.0" mnemonicParsing="false" onAction="#exit" prefHeight="17.0" prefWidth="68.0" text="Exit">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

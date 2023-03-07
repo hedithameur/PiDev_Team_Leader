@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.sql.Date;
+import java.time.LocalDate;
 import javafx.scene.control.ComboBox;
 
 
@@ -36,7 +38,7 @@ public class UtilisateurService implements InterfService<Utilisateur> {
     @Override
     public void ajouter(Utilisateur u) {
         try {
-           String sql ="INSERT  INTO utilisateur(nom, prenom, role, telephone, email, mot_de_passe) VALUES (?,?,?,?,?,?)";
+           String sql ="INSERT  INTO utilisateur(nom, prenom, role, telephone, email, mot_de_passe, dateNaiss) VALUES (?,?,?,?,?,?,?)";
            PreparedStatement ste = cnx.prepareStatement(sql);
           
            ste.setString(1, u.getNom());
@@ -45,7 +47,7 @@ public class UtilisateurService implements InterfService<Utilisateur> {
            ste.setInt(4, u.getTelephone());
            ste.setString(5, u.getEmail());
            ste.setString(6, u.getMot_de_passe());
-           
+           ste.setDate(7, Date.valueOf(u.getdateNaiss()));
            ste.executeUpdate();
            System.out.println("Utilisateur ajoutée");
         } 
@@ -64,8 +66,8 @@ public class UtilisateurService implements InterfService<Utilisateur> {
             ResultSet s = ste.executeQuery(sql);
             while (s.next()) {
                
-                Utilisateur u = new Utilisateur(s.getInt("id"), s.getString("nom"), 
-                s.getString("prenom"), s.getString("role"),s.getInt("telephone"), s.getString("email"), s.getString("mot_de_passe"));
+              Utilisateur u = new Utilisateur(s.getInt("id"), s.getString("nom"), 
+                s.getString("prenom"), s.getString("role"),s.getInt("telephone"), s.getString("email"), s.getString("mot_de_passe"), s.getDate(8).toLocalDate());
                 
                 utilisateurs.add(u);
 
@@ -109,11 +111,34 @@ public class UtilisateurService implements InterfService<Utilisateur> {
         }
 
     }
+
+    @Override
+    public List<String> getPassword(String email) {
+   
+         List<String> emails = new ArrayList<>();
+        try {
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+         String sql="select mot_de_passe from utilisateur where email=?";
+         PreparedStatement ste =cnx.prepareStatement(sql);
+         ste.setString(1,email);
+         ResultSet r = ste.executeQuery();
+         while(r.next())
+         {
+            
+             String m = r.getString("email");
+        emails.add(m);
+         }
+     } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+     }
+        return emails;
+    }
+    }
     
     
     
     
-}
 
  
            

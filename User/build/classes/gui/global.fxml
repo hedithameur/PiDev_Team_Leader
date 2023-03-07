@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GlobalController">
+   <children>
+      <Button fx:id="btnartiste" layoutX="25.0" layoutY="112.0" mnemonicParsing="false" onAction="#gotoartiste" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #ef6b48;" text="Espace artistes " textFill="WHITE">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnmembre" layoutX="319.0" layoutY="112.0" mnemonicParsing="false" onAction="#gotomembre" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #ef6b48;" text="Espace membres" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="198.0" fitWidth="317.0" layoutX="155.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@event.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="113.0" layoutY="22.0" prefHeight="43.0" prefWidth="318.0" text="                     D A Y      E V E N T" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="522.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

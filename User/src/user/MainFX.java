@@ -31,7 +31,7 @@ public class MainFX extends Application {
  
         public void start(Stage primaryStage) throws IOException {
         this.primaryStage= primaryStage;
-        parent=FXMLLoader.load(getClass().getResource("../gui/emptyy.fxml"));
+        parent=FXMLLoader.load(getClass().getResource("../gui/adminlogin.fxml"));
         Scene scene=new Scene(parent);
         primaryStage.setScene(scene);
         primaryStage.show();
