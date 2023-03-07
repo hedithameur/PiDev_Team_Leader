@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-border-color: #182052; -fx-border-width: 4; -fx-border-radius: 30;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.CommentaireController">
+   <children>
+      <HBox prefHeight="60.0" prefWidth="260.0">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/avatar.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" maxWidth="220.0" prefHeight="60.0" prefWidth="201.0" style="-fx-background-color: #ef6b48; -fx-border-radius: 50; -fx-border-width: 4;" text="username" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="comments" alignment="CENTER" contentDisplay="CENTER" maxWidth="294.0" prefHeight="92.0" prefWidth="292.0" style="-fx-border-radius: 50; -fx-border-width: 4;" text="username" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

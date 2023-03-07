@@ -1,23 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="pidev.gui.SingleEventModelController">
+<AnchorPane id="AnchorPane" maxWidth="1000.0" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.SingleEventModelController">
    <children>
-      <Label fx:id="titre_single" layoutX="444.0" layoutY="52.0" text="Label">
+      <VBox maxWidth="1000.0" prefHeight="1000.0" prefWidth="1000.0">
+         <children>
+            <HBox maxHeight="150.0" minHeight="150.0" prefHeight="150.0" prefWidth="1000.0">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="40.0" top="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <HBox prefHeight="150.0" prefWidth="674.0">
+                     <children>
+                        <Label fx:id="acceuil_btn" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#acceuil" text="ACCEUIL" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="200.0" top="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="contact_btn" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#contact" text="CONTACT" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="40.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="titre_single" contentDisplay="CENTER" maxWidth="1000.0" prefHeight="99.0" prefWidth="900.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox maxWidth="1000.0" prefHeight="300.0" prefWidth="1000.0" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fx:id="img_single" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/cheb%20khaled.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="350.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox minHeight="30.0" prefHeight="30.0" prefWidth="200.0" />
+            <HBox prefHeight="600.0" prefWidth="1000.0">
+               <children>
+                  <ScrollPane fx:id="pane_comments" hbarPolicy="NEVER" maxWidth="400.0" prefHeight="600.0" prefWidth="310.0" style="-fx-border-radius: 20;" vbarPolicy="NEVER">
+                     <content>
+                        <VBox fx:id="box_comments" prefHeight="400.0" prefWidth="310.0" style="-fx-border-radius: 20;" />
+                     </content>
+                  </ScrollPane>
+                  <VBox prefHeight="600.0" prefWidth="601.0">
+                     <children>
+                        <HBox prefHeight="34.0" prefWidth="602.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/date.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label fx:id="date_affiche" alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/localisation.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label fx:id="loc_affiche" alignment="CENTER" contentDisplay="CENTER" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="55.0" prefWidth="901.0">
+                           <children>
+                              <Label alignment="CENTER" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" style="-fx-border-color: #ffffff; -fx-border-width: 5;" text="TYPE BILLET" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" style="-fx-border-color: #ffffff; -fx-border-width: 5;" text="PRIX" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="type_billet" alignment="CENTER" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" style="-fx-border-color: #ffffff; -fx-border-width: 5;" text="type" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="prix_billet" alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" style="-fx-border-color: #ffffff; -fx-border-width: 5;" text="type" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Button fx:id="btn_ajoute_panier" alignment="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#ajoute_panier" text="Ajouter au panier">
+                           <VBox.margin>
+                              <Insets left="250.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="btn_instru" layoutX="810.0" layoutY="54.0" mnemonicParsing="false" onAction="#instrument" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" text="INSRU" textFill="#ef6d48">
          <font>
-            <Font size="48.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
-      </Label>
-      <ImageView fx:id="img_single" fitHeight="150.0" fitWidth="200.0" layoutX="425.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Downloads/cheb%20khaled.jpg" />
-         </image>
-      </ImageView>
+      </Button>
+      <Button fx:id="btn_panier" layoutX="905.0" layoutY="54.0" mnemonicParsing="false" onAction="#panier" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="PANIER" textFill="#ef6b48">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -7,6 +7,10 @@ package pidev.gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,15 +63,24 @@ public class ModelEventController implements Initializable {
   
      public void setData (Evenement e)
     {
+       // System.out.println(e.getAffiche());
        Image img = new Image(getClass().getResourceAsStream(".."+e.getAffiche()));
        // ../ressources/balti.jpg
     img_card.setImage(img);
     nom_card.setText(e.getNom());
-    String priks = String.valueOf(e.getPrix());
+    String priks = String.valueOf(e.getPrix()) + "DINARS";
     prix_card.setText(priks);
-    //Date date1= e.getDate();
-    //String datestr = date1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-    date_card.setText(e.getLieu());
+    Date date1= e.getDate();
+    String pattern = "dd/MM/yyyy";
+
+DateFormat df = new SimpleDateFormat(pattern);
+
+String dateString = df.format(date1);
+ 
+    lieu_card.setText(e.getLieu());
+    String nb=String.valueOf(e.getNb_ticket());
+    nb_card.setText(nb+" places disponibles");
+    date_card.setText(dateString);
      id_single=e.getId();
     
     
@@ -100,27 +113,7 @@ public class ModelEventController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(EventFXMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
-         
-              /*    try {
-        
-            Evenement e = new Evenement();
-            Parent loader = FXMLLoader.load(getClass().getResource("../gui/SingleEventModel.fxml"));
-            e.setId(4);
-            
-            
- 
-            // Scene scene = new Scene(loader, 300, 250);
-             img_card.getScene().setRoot(loader);
-            
-             // SingleEventModelController controller = loader.getController();
-             
-           // primaryStage.setTitle("Suivi Evenement");
-            //primaryStage.setScene(scene);
-            //primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(EventFXMain.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+       
     }
     }
     

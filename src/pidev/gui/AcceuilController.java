@@ -13,9 +13,16 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import pidev.entity.Evenement;
@@ -33,6 +40,12 @@ public class AcceuilController implements Initializable {
     private List<Evenement> Acceuil;
 EvenementService es =new EvenementService();
  Connection cnx;
+    @FXML
+    private Button btn_instru;
+    @FXML
+    private Button btn_panier;
+    @FXML
+    private Label acceuil_btn;
     /**
      * Initializes the controller class.
      */
@@ -72,5 +85,29 @@ EvenementService es =new EvenementService();
          return events;
         
     }
-    
+
+    @FXML
+    private void instrument(ActionEvent event) {
+    }
+
+    @FXML
+    private void panier(ActionEvent event) {
+    }
+
+    @FXML
+    private void acceuil(MouseEvent event) {
+         try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+            acceuil_btn.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void contact(MouseEvent event) {
+    }
+
+   
 }

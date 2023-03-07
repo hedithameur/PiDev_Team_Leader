@@ -4,16 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/EventFXMain.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/ChartLieuController.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/PiDev.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/services/EvenementService.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/EmailController.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/CardController.java</file>
+            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/CommentaireController.java</file>
+            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/commentaire.fxml</file>
+            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/ModelEventController.java</file>
             <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/AjouterEvenementFXMLController.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/card.fxml</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/modelEvent.fxml</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/entity/Evenement.java</file>
-            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/Acceuil.fxml</file>
+            <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/SingleEventModelController.java</file>
             <file>file:/C:/Users/21650/Desktop/PiDev/src/pidev/gui/AcceuilController.java</file>
         </group>
     </open-files>
