@@ -3,14 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/music.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/musicService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/tools/MaConnection.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/InterfaceMusic.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/UtilisateurService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/Music_Playlist.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/AfficherMusicController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/music_playlist.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/test/Pidev.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/Playlist.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/playlist_interface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/music_playlistService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/StatController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/API/MusicPlayController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/API/YoutubeDownloaderController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/music.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/Utilisateur.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/tools/MaConnection.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/AdminloginController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/CreerPlaylistController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/PlayListService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/test/MusicINterface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/AjouterPlaylistController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/AfficherPlaylistUser.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/AfficherPlaylistUserController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/InterfaceMusic.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/AfficherPlaylistController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/CreerPlaylist.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/AjouterMusicController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/frontend/adminlogin.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/musicService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/AssocierMusicPlaylistController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/InterfService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/services/playlist_interface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/entity/Playlist.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Pidev/src/pidev/gui/MusicPlaylistController.java</file>
         </group>
     </open-files>
 </project-private>

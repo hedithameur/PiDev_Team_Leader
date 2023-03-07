@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="434.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.MusicPlaylistController">
+   <children>
+      <Button fx:id="music" layoutX="106.0" layoutY="211.0" mnemonicParsing="false" onAction="#GoMusic" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #ef6b48;" text="music" textFill="#e1dcdc" />
+      <Button fx:id="playlist" layoutX="360.0" layoutY="211.0" mnemonicParsing="false" onAction="#goPlaylist" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #ef6b48;" text="Playlist" textFill="#fcf5f5" />
+      <Text fill="#f5e1e1" layoutX="204.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertainement" textAlignment="CENTER" wrappingWidth="191.6708984375">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

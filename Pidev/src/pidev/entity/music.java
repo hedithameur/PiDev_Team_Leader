@@ -7,6 +7,7 @@ package pidev.entity;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 /**
  *
@@ -16,28 +17,29 @@ public class music {
     private int id;
     private String nom_artiste;
     private String nom_morceaux;
-    private int id_Playlist;
+  
       /*File file = new File("D:\\S2.mp3");
       FileInputStream fis;
       ByteArrayOutputStream bos = new ByteArrayOutputStream();*/
-byte[] bytes ;
+String  fichier;
 public music()
 {
     
 }
 
-    public music(int id, String nom_artiste, String nom_morceaux, int id_Playlist, byte[] bytes) {
+    public music(int id, String nom_artiste, String nom_morceaux,  String fichier) {
         this.id = id;
         this.nom_artiste = nom_artiste;
         this.nom_morceaux = nom_morceaux;
-        this.id_Playlist = id_Playlist;
-        this.bytes = bytes;
+    
+        this.fichier = fichier;
+       
     }
 
-    public int getId_Playlist() {
-        return id_Playlist;
-    }
-    
+
+   
+
+   
 
     public int getId() {
         return id;
@@ -51,15 +53,43 @@ public music()
         return nom_morceaux;
     }
 
-    public byte[] getBytes() {
-        return bytes;
+    public String getFichier() {
+        return fichier;
     }
 
     @Override
     public String toString() {
-        return "music{" + "id=" + id + ", nom_artiste=" + nom_artiste + ", nom_morceaux=" + nom_morceaux + ", id_Playlist=" + id_Playlist + ", bytes=" + bytes + '}';
+        return "music{" + "id=" + id + ", nom_artiste=" + nom_artiste + ", nom_morceaux=" + nom_morceaux + ", fichier=" + fichier + '}';
     }
 
+    
+   
+
+    
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNom_artiste(String nom_artiste) {
+        this.nom_artiste = nom_artiste;
+    }
+
+    public void setNom_morceaux(String nom_morceaux) {
+        this.nom_morceaux = nom_morceaux;
+    }
+
+    
+
+    public void setFichier(String fichier) {
+        this.fichier = fichier;
+    }
+
+ 
+
+    
+
+   
     
 
     
