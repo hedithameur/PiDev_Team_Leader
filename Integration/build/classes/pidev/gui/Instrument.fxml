@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="ajouterbtn" prefHeight="444.0" prefWidth="1038.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.InstrumentController">
+   <children>
+      <TextField fx:id="nomid" layoutX="22.0" layoutY="188.0" promptText="Entre nom" />
+      <TextField fx:id="prixid" layoutX="22.0" layoutY="251.0" promptText="Entrer prix" />
+      <TextField fx:id="descriptionid" layoutX="22.0" layoutY="311.0" promptText="Entrer Description" />
+      <Button fx:id="Ajouterbtn" layoutX="382.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+      <Label fx:id="control" layoutX="57.0" layoutY="263.0" />
+      <TableView fx:id="tableaucategorie" layoutX="185.0" layoutY="82.0" onMouseClicked="#mouseclicked" onSort="#aff" prefHeight="237.0" prefWidth="620.0">
+        <columns>
+          <TableColumn fx:id="idcolumn" prefWidth="58.0" text="Id instru" />
+          <TableColumn fx:id="nomcolumn" prefWidth="81.0" text="    nom" />
+            <TableColumn fx:id="prixcolumn" prefWidth="70.0" text="    prix" />
+            <TableColumn fx:id="photocolumn" prefWidth="181.0" text="Photo" />
+            <TableColumn fx:id="descriptioncolumn" prefWidth="132.0" text="    description" />
+            <TableColumn fx:id="idcc" prefWidth="97.0" text="id_categorie" />
+        </columns>
+      </TableView>
+      <Text fx:id="idtext" layoutX="85.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="modifierbtn" layoutX="256.0" layoutY="345.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+      <Button fx:id="supprimerid" layoutX="532.0" layoutY="344.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
+      <ImageView fitHeight="82.0" fitWidth="136.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="100.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un instrument" wrappingWidth="195.42578125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="19.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisir titre d'instrument" wrappingWidth="155.13671875">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="83.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="61.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="71.99999713897705">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Text>
+      <ComboBox fx:id="idcombo" layoutX="19.0" layoutY="116.0" prefWidth="150.0" promptText="Categorie" />
+      <Label fx:id="labeleaffiche" layoutX="219.0" layoutY="323.0" />
+      <Button fx:id="importcolumn" layoutX="36.0" layoutY="366.0" mnemonicParsing="false" onAction="#ajouterphoto" prefHeight="25.0" prefWidth="121.0" text="Import" />
+      <Text layoutX="50.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisir cattegorie">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="idt" layoutX="146.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="yar" layoutX="498.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="statid" layoutX="697.0" layoutY="354.0" mnemonicParsing="false" onAction="#newpage" text="statistique" />
+      <Button fx:id="acc" layoutX="615.0" layoutY="391.0" mnemonicParsing="false" onAction="#accueil" text="Accueil" />
+      <ImageView fx:id="img" fitHeight="38.0" fitWidth="87.0" layoutX="768.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="textsearch" layoutX="317.0" layoutY="36.0" />
+      <ImageView fx:id="imageqr" fitHeight="96.0" fitWidth="150.0" layoutX="812.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="butonnqr" layoutX="845.0" layoutY="275.0" mnemonicParsing="false" onAction="#qrcode" text="Qrcode" />
+   </children>
+</AnchorPane>

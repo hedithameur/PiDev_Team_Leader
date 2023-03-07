@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="710.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.CommenterController">
+   <children>
+      <ComboBox fx:id="idchoix" layoutX="161.0" layoutY="76.0" prefWidth="150.0" promptText="Choisir ID" />
+      <Label layoutX="4.0" layoutY="78.0" text="ID Reclamation :" textFill="#f8efef">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="158.0" text="Date :" textFill="#f5f2f2">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dField" layoutX="161.0" layoutY="156.0" promptText="0000/00/00" />
+      <TextArea fx:id="conField" layoutX="158.0" layoutY="199.0" prefHeight="95.0" prefWidth="243.0" promptText="Contenu" />
+      <Label layoutX="6.0" layoutY="229.0" text="Contenu :" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="25.0" text="Ajouter Commentaire :" textFill="#c6eb10">
+         <font>
+            <Font name="Bauhaus 93" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="aj" layoutX="517.0" layoutY="188.0" mnemonicParsing="false" onAction="#ajout" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Ajouter" textFill="#fffafa">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="aff" layoutX="517.0" layoutY="121.0" mnemonicParsing="false" onAction="#afficher" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Afficher" textFill="#f7f7f8">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="mod" layoutX="112.0" layoutY="385.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#f0eff5">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.33">
+               <light>
+                  <Light.Distant />
+               </light>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="supp" layoutX="592.0" layoutY="385.0" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: red;" text="Supprimer" textFill="#fffefe">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="405.0" layoutY="361.0" text="Veuillez supprimer un commentaire :" textFill="#f8f7f7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="360.0" text="Pour modifier un commentaire Cliquez sur :" textFill="#eee8e8">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="idcho" layoutX="446.0" layoutY="384.0" prefHeight="25.0" prefWidth="143.0" promptText="Choisir ID" />
+      <Button fx:id="retour2" layoutX="49.0" layoutY="27.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #ef6b48;" text="Retour" textFill="#f8f5f5">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="res" layoutX="552.0" layoutY="264.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="68.0" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#fff7f7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="idcontrol3" layoutX="499.0" layoutY="234.0" prefHeight="20.0" prefWidth="174.0" textFill="#d0100a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="358.0" layoutY="387.0" prefHeight="20.0" prefWidth="76.0" text="ID Comm :" textFill="#fcf8f8">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="idcontrol4" layoutX="396.0" layoutY="416.0" prefHeight="17.0" prefWidth="243.0" textFill="#ee1111">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="3.0" layoutY="118.0" text="Titre du Reclamation :" textFill="#f5eeee">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="idtit" layoutX="167.0" layoutY="117.0" prefHeight="21.0" prefWidth="222.0" textFill="#ef6b48">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="idpub" layoutX="383.0" layoutY="440.0" mnemonicParsing="false" onAction="#publier" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #ef6b48;" text="PUBLIER" textFill="#fffdfd">
+         <font>
+            <Font name="Algerian" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="37.0" layoutY="445.0" prefHeight="21.0" prefWidth="338.0" text="Pour publier une information aux utilisateurs :" textFill="#f5f0f0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idemail" layoutX="187.0" layoutY="307.0" prefHeight="25.0" prefWidth="185.0" />
+      <Label layoutX="4.0" layoutY="309.0" prefHeight="21.0" prefWidth="99.0" text="Num° Tel :" textFill="#fcf8f8">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="idlabel10" layoutX="405.0" layoutY="311.0" prefHeight="17.0" prefWidth="156.0" textFill="#f20808">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

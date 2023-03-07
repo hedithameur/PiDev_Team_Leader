@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="662.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.API.MusicPlayController">
+   <children>
+      <Button fx:id="play" layoutX="61.0" layoutY="352.0" mnemonicParsing="false" onAction="#PlayMusic" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #ef6b48;" text="Play" textFill="#ebe5e5" />
+      <Button fx:id="Stop" layoutX="259.0" layoutY="352.0" mnemonicParsing="false" onAction="#StopMusic" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: #ef6b48;" text="Stop" textFill="#f5eded" />
+      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="74.0" layoutY="14.0" />
+      <Button fx:id="Pause" layoutX="481.0" layoutY="352.0" mnemonicParsing="false" onAction="#PauseMusic" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #ef6b48;" text="Pause" textFill="#f5eeee" />
+      <ComboBox layoutX="-367.0" layoutY="-127.0" prefWidth="150.0" />
+      <ComboBox fx:id="fichiercombo" layoutX="220.0" layoutY="149.0" prefHeight="31.0" prefWidth="258.0" />
+      <Label layoutX="100.0" layoutY="114.0" text="Choisir la music que voulez ecoutez" textFill="#f5efef">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Text fill="#fff8f8" layoutX="207.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listen Music" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
