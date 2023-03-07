@@ -5,9 +5,10 @@
  */
 package tn.esprit.entity;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 /**
  *
@@ -15,31 +16,29 @@ import java.time.LocalDateTime;
  */
 public class Commande_instruments {
 
-   private int id_commande,id_vendeur,id_instru;
-  
-    
-private LocalDate date_commande;
-    //LocalDateTime date = LocalDateTime.now();
-
-    public Commande_instruments(int id_commande, int id_vendeur, int id_instru, LocalDate date_commande) {
-        this.id_commande = id_commande;
-        this.id_vendeur = id_vendeur;
-        this.id_instru = id_instru;
-        this.date_commande = date_commande;
-    }
-
-    public LocalDate getDate_commande() {
-        return date_commande;
-    }
-
-    public void setDate_commande(LocalDate date_commande) {
-        this.date_commande = date_commande;
-    }
-
-   
-    
+   private int id_commande;
+   private String nom ;
+   private float prix ;
+//   Date date_commande ;
+   private LocalDate date_commande = LocalDate.now();
 
     public Commande_instruments() {
+    }
+
+    public Commande_instruments(int id_commande, String nom, float prix,LocalDate date_commande) {
+        this.id_commande = id_commande;
+        this.nom = nom;
+        this.prix = prix;
+              this.date_commande=date_commande;
+
+    }
+    
+
+    public Commande_instruments(String nom, float prix,LocalDate date_commande) {
+      
+        this.nom = nom;
+        this.prix = prix;
+      this.date_commande=date_commande;
     }
 
     public int getId_commande() {
@@ -50,25 +49,38 @@ private LocalDate date_commande;
         this.id_commande = id_commande;
     }
 
-    public int getId_vendeur() {
-        return id_vendeur;
+    public String getNom() {
+        return nom;
     }
 
-    public void setId_vendeur(int id_vendeur) {
-        this.id_vendeur = id_vendeur;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public int getId_instru() {
-        return id_instru;
+    public float getPrix() {
+        return prix;
     }
 
-    public void setId_instru(int id_instru) {
-        this.id_instru = id_instru;
+    public void setPrix(float prix) {
+        this.prix = prix;
     }
+
+    public LocalDate getDate_commande() {
+        return date_commande;
+    }
+
+    public void setDate_commande(LocalDate date_commande) {
+        this.date_commande = date_commande;
+    }
+
+    @Override
+    public String toString() {
+        return "Commande_instruments{" + "id_commande=" + id_commande + ", nom=" + nom + ", prix=" + prix + ", date_commande=" + date_commande + '}';
+    }
+   
 
     
 
-    
+   
   
-    
 }

@@ -10,18 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import tn.esprit.entity.CategorieInstrument;
-import tn.esprit.entity.Commande_instruments;
 import tn.esprit.entity.Instrument;
-import tn.esprit.entity.Utilisateur;
 import tn.esprit.tools.Connexion;
 
 /**
@@ -35,28 +27,32 @@ public class ServiceInstrument implements Interface< Instrument> {
     public ServiceInstrument() {
         cnx = Connexion.getInstance().getCnx();
     }
-    
 
-
-
-
-   
-
-   
-   
-
-    
     @Override
     public void ajouter(Instrument t) {
         try {
-            String sql = "INSERT INTO `instruments`(`id_instrument`,`nom`, `prix`, `description`, `id_vendeur`, `id_categorie`) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO instruments ( `nom` , `prix`, `description`,`id_categorie`)  VALUES (?,?,?,?)";
             PreparedStatement ste = cnx.prepareStatement(sql);
-            ste.setInt(1, t.getId_instrument());
-            ste.setString(2, t.getNom());
-            ste.setFloat(3, t.getPrix());
+            ste.setString(1, t.getNom());
+            ste.setFloat(2, t.getPrix());
+            ste.setString(3, t.getDescription());
+            ste.setInt(4, t.getCategorie().getId());
+            ste.executeUpdate();
+            System.out.println("Intrument ajoutée");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void ajouterphoto(Instrument t) {
+        try {
+            String sql = "INSERT INTO instruments ( `nom` , `prix`, `photo`,`description`,`id_categorie`)  VALUES (?,?,?,?,?)";
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1, t.getNom());
+            ste.setFloat(2, t.getPrix());
+            ste.setString(3, t.getPhoto());
             ste.setString(4, t.getDescription());
-            ste.setInt(5, t.getId_vendeur());
-            ste.setInt(6, t.getId_categorie());
+            ste.setInt(5, t.getCategorie().getId());
             ste.executeUpdate();
             System.out.println("Intrument ajoutée");
         } catch (SQLException ex) {
@@ -66,7 +62,7 @@ public class ServiceInstrument implements Interface< Instrument> {
 
     @Override
     public void supprimer(Instrument t) {
-   String sql = "delete from instruments where id_instrument=?";
+        String sql = "delete from instruments where id_instrument=?";
         try {
             PreparedStatement ste = cnx.prepareStatement(sql);
             ste.setInt(1, t.getId_instrument());
@@ -75,52 +71,149 @@ public class ServiceInstrument implements Interface< Instrument> {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-       
+
     }
 
-    @Override
-    public void modifier(String nom, Instrument t) {
+    public void modifier(String nom, float prix, String description, Instrument t) {
+        String sql = "update instruments set nom=?,  prix =? , description=? where id_instrument=?";
         try {
-            String requete4 = " UPDATE instruments SET " + "  nom= ? WHERE id_instrument= " + t.getId_instrument();
-            PreparedStatement pst = Connexion.getInstance().getCnx().prepareStatement(requete4);
-            pst.setString(1, nom);
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1, nom);
+            ste.setFloat(2, prix);
+            ste.setString(3, description);
 
-            pst.executeUpdate();
-            System.out.println("instrument modifié !");
-
+            ste.setInt(4, t.getId_instrument());
+            ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    @Override
-    public ObservableList afficher() {
-         String req = "SELECT * FROM instruments";
-        ObservableList<Instrument> ca = FXCollections.observableArrayList();
-        Statement stm;
+    public Instrument getInstrument(int id) {
+        Instrument i = new Instrument();
+        String sql = "select * from categorie_instruments where id = " + id;
         try {
-            stm = this.cnx.createStatement();
-            ResultSet rs = stm.executeQuery(req);
-            while (rs.next()) {
-                Instrument ct = new Instrument();
-                ct.setId_instrument(rs.getInt("id_instrument"));
-                ct.setNom(rs.getString("nom"));
-                ct.setPrix(rs.getFloat("prix"));
-                ct.setDescription(rs.getString("description"));
-                ct.setId_vendeur(rs.getInt("id_vendeur"));
-                ct.setId_categorie(rs.getInt("id_vendeur"));
-                ca.add(ct);
-                System.out.println(ct+"\n");
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            if (s.next()) {
+                // Si un résultat est trouvé, on met à jour l'objet Instrument avec les données de la base de données
+
+                i.setNom(s.getString("nom"));
+                //i.setDescription(s.getString("description"));
+            } else {
+                // Si aucun résultat n'est trouvé, on retourne null
+                i = null;
             }
+            s.close(); // On ferme le ResultSet
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            i = null;
+        }
+        return i; // On retourne l'objet Instrument mis à jour ou null s'il n'a pas été trouvé
+    }
+
+    @Override
+    public List<Instrument> getAllInstruments() {
+        List<Instrument> ct = new ArrayList<>();
+        try {
+            String sql = "select * from instruments";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+                CategorieInstrument c = new CategorieInstrument();
+                Instrument i = new Instrument();
+                Instrument p = new Instrument(s.getInt(1), s.getString(2), s.getFloat(3), s.getString(4), s.getString(5));
+                c.setId(s.getInt(6));
+
+                ServiceCategorie myser = new ServiceCategorie();
+                c = myser.findCatById(c.getId());
+                p.setCategorie(c);
+                ct.add(p);
+                //int id_categorie = s.getInt("id_categorie");
+
+            }
+            System.out.println(ct);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return ca;
+        return ct;
     }
 
+    
+    public List<Instrument> displayInstruments() {
+        List<Instrument> ct = new ArrayList<>();
+        try {
+            String sql = "select * from instruments";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+                CategorieInstrument c = new CategorieInstrument();
+               Instrument i = new Instrument();
+                Instrument p = new Instrument(s.getString("nom"), s.getFloat("prix"),s.getString("photo"));
 
+//                ServiceCategorie myser = new ServiceCategorie();
+//                c = myser.findCatById(c.getId());
+               p.setCategorie(c);
+                ct.add(p);
+//                //int id_categorie = s.getInt("id_categorie");
 
-  
+            }
+            System.out.println(ct);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ct;
+    }
 
-   
+    public List<Instrument> newaffciher() {
+        List<Instrument> ct = new ArrayList<>();
+        try {
+            String sql = "select * from instruments";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+                CategorieInstrument c = new CategorieInstrument();
+                Instrument i = new Instrument();
+                Instrument p = new Instrument(s.getInt(1), s.getString(2), s.getFloat(3), s.getString(4), s.getString(5));
+                c.setId(s.getInt(6));
+
+                ServiceCategorie myser = new ServiceCategorie();
+                c = myser.findCatById(c.getId());
+                p.setCategorie(c);
+                ct.add(p);
+                //int id_categorie = s.getInt("id_categorie");
+
+            }
+            System.out.println(ct);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ct;
+    }
+
+    public List<Instrument> getidCat() {
+
+        //La classe Pair est une classe générique fournie par Java qui vous permet de combiner deux types de données différents dans une seule paire
+        List<Instrument> ct = new ArrayList<>();
+        try {
+            String sql = "SELECT I.id_instrument , I.nom , I.prix , I.description, C.nom_categorie FROM instruments as I , categorie_instrument as C WHERE I.id_categorie = C.id";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+                //Instrument b = new Instrument (s.getInt("id_instrument"),s.getString("nom"),s.getFloat("prix"),s.getString("description"),s.getString("nom_categorie"));
+                // ct.add(b);            
+            }
+            System.out.println(ct);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ct;
+
+    }
+
+    @Override
+    public void modifier(String nom, String description, Instrument t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

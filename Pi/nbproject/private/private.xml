@@ -3,7 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bouzi/Documents/NetBeansProjects/Pi/src/guid/NewFXMain.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/Annonce.fxml</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/acheter.fxml</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/service/ServiceInstrument.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/NewFXMain.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/AcheterController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/affichertableau.fxml</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/Cotéclient.fxml</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/ModelController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/InstrumentController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/entity/Instrument.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/service/ServiceCategorie.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/tools/Connexion.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/test/Pi.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/AffichertableauController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/DashboardController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/entity/Commande_instruments.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/AnnonceController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/CategorieController.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/tn/esprit/service/ServiceCommande.java</file>
+            <file>file:/C:/Users/bouzi/Desktop/nouveaucopie/taraji/src/guid/CotéclientController.java</file>
         </group>
     </open-files>
 </project-private>

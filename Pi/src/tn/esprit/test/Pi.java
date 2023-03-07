@@ -40,9 +40,26 @@ public class Pi {
 //        
  ServiceCategorie cc =new ServiceCategorie();
  CategorieInstrument c11 = new CategorieInstrument(6, "piano", "jdjdj");
- 
- // cc.ajouter(c11);
- cc.modifier(c11);
+  CategorieInstrument c12 = new CategorieInstrument(6, "piano", "jdjdj");
+  CategorieInstrument c13 = new CategorieInstrument(14, "yayay", "jdjdj");
+  //cc.ajouter(c13);
+  ServiceInstrument  sc = new ServiceInstrument();
+  Instrument c1 = new Instrument(115,"dd", 400, "dd","gb",c13);
+  
+ //sc.ajouter(c1);
+  ServiceCommande ss = new  ServiceCommande (); 
+  LocalDate date_commande = LocalDate.now();
+   Commande_instruments s1 =new  Commande_instruments ( "piano",400,date_commande);
+ //ss.ajouter(s1);
+        System.out.println(ss.getAllInstruments());
+    
+
+//sc.ajouter(c1);
+        //System.out.println(sc.getAllInstruments());  
+//sc.getAllInstruments();
+        //cc.findCatById(10);
+  //cc.ajouter(c11);
+ //cc.supprimer(c13);
  
          }
 

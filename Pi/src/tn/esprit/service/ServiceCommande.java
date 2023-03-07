@@ -6,13 +6,14 @@
 package tn.esprit.service;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import tn.esprit.entity.CategorieInstrument;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import tn.esprit.entity.Commande_instruments;
 import tn.esprit.tools.Connexion;
 
@@ -20,7 +21,8 @@ import tn.esprit.tools.Connexion;
  *
  * @author bouzi
  */
-public class ServiceCommande implements Interface<Commande_instruments>{
+public class ServiceCommande implements Interface<Commande_instruments> {
+
     Connection cnx;
 
     public ServiceCommande() {
@@ -29,17 +31,13 @@ public class ServiceCommande implements Interface<Commande_instruments>{
 
     @Override
     public void ajouter(Commande_instruments t) {
-       try {
-            String sql = "INSERT INTO `commande_instruments`(`id_commande`, `id_vendeur`,`id_instru`,`date_commande`) VALUES (?,?,?,?)";
+        try {
+            String sql = "INSERT INTO commande_instruments ( `nom_produit`, `prix` , `date`)values (?,?,?) ";
             PreparedStatement ste = cnx.prepareStatement(sql);
-            ste.setInt(1, t.getId_commande());
-          
-         
-        
-      
-            ste.setInt(2, t.getId_vendeur());
-            ste.setInt(3,t.getId_instru() );
-            ste.setDate(4, java.sql.Date.valueOf(t.getDate_commande()));
+            ste.setString(1, t.getNom());
+            ste.setFloat(2,t.getPrix() );
+            ste.setDate(3, java.sql.Date.valueOf(t.getDate_commande()));
+            
             ste.executeUpdate();
             System.out.println("Categorie ajoutée");
         } catch (SQLException ex) {
@@ -49,7 +47,7 @@ public class ServiceCommande implements Interface<Commande_instruments>{
 
     @Override
     public void supprimer(Commande_instruments t) {
-      String sql = "delete from commande_instruments where id_commande=?";
+        String sql = "delete from commande_instruments where id_commande=?";
         try {
             PreparedStatement ste = cnx.prepareStatement(sql);
             ste.setInt(1, t.getId_commande());
@@ -61,36 +59,44 @@ public class ServiceCommande implements Interface<Commande_instruments>{
 
     }
 
-    @Override
-    public void modifier(String nom, Commande_instruments t) {
-       
-    }
-
-    @Override
-    public ObservableList afficher() {
-       String req = "SELECT * FROM commande_instruments";
-        
-        ObservableList<Commande_instruments> ca = FXCollections.observableArrayList();
-        Statement stm;
+    public void modifier(String nom_produit , float prix) {
+        String sql = "update instruments set nom=? , prix =, where id=?";
         try {
-            stm = this.cnx.createStatement();
-            ResultSet rs = stm.executeQuery(req);
-            while (rs.next()) {
-                Commande_instruments ct = new Commande_instruments();
-                ct.setId_commande(rs.getInt("id_commande"));
-              
-                ct.setId_vendeur(rs.getInt("id_vendeur"));
-                 ct.setId_instru(rs.getInt("id_instru"));
-               ct.setDate_commande(rs.getDate("date").toLocalDate());  
-                ca.add(ct);
-                System.out.println(ct+"\n");
-            }
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1, nom_produit);
+            ste.setFloat(2, prix);
+            ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return ca;
+
     }
-   
+
+    @Override
+    public void modifier(String nom, String description, Commande_instruments t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public List<Commande_instruments> getAllInstruments() {
+        List<Commande_instruments> ct = new ArrayList<>();
+        try {
+            String sql = "select * from commande_instruments";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+                Commande_instruments ci = new  Commande_instruments ();
+                Date value3 = s.getDate("date");
+                LocalDate value3AsLocalDate = value3.toLocalDate();
+                Commande_instruments p = new Commande_instruments(s.getInt("id_commande"),s.getString("nom_produit"),s.getFloat("prix"),value3AsLocalDate);
+              ct.add(p);
+            }
+            System.out.println(ct);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ct;
+    }
+
+    }
 

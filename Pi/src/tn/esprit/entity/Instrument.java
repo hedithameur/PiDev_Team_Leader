@@ -11,36 +11,87 @@ package tn.esprit.entity;
  */
 public class Instrument {
 
+    public static Object get(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     int id_instrument;
     String nom;
     float prix;
-    String photo;
+    String photo ;
     String description;
-    int id_vendeur , id_categorie ;
+    
+    CategorieInstrument categorie ;
+   
+    
 
     public Instrument() {
     }
 
-    public Instrument(int id_instrument, String nom, float prix, String photo, String description, int id_vendeur, int id_categorie) {
+    public Instrument(String nom, float prix, String photo, String description) {
+        this.nom = nom;
+        this.prix = prix;
+        this.photo = photo;
+        this.description = description;
+    }
+
+    public Instrument(String nom, float prix, String photo) {
+        this.nom = nom;
+        this.prix = prix;
+        this.photo = photo;
+    }
+
+    public Instrument(int id_instrument, String nom, float prix, String photo, String description, CategorieInstrument categorie) {
         this.id_instrument = id_instrument;
         this.nom = nom;
         this.prix = prix;
         this.photo = photo;
         this.description = description;
-        this.id_vendeur = id_vendeur;
-        this.id_categorie = id_categorie;
+        this.categorie = categorie;
     }
-    
 
-    public Instrument(int id_instrument, String nom, float prix, String description, int id_vendeur, int id_categorie) {
+    public Instrument(int id_instrument, String nom, float prix, String photo, String description) {
         this.id_instrument = id_instrument;
         this.nom = nom;
         this.prix = prix;
+        this.photo = photo;
         this.description = description;
-        this.id_vendeur = id_vendeur;
-        this.id_categorie = id_categorie;
     }
+
+    public Instrument(String nom, float prix, String photo, String description, CategorieInstrument categorie) {
+        this.nom = nom;
+        this.prix = prix;
+        this.photo = photo;
+        this.description = description;
+        this.categorie = categorie;
+    }
+    
+
+  
+
+   
+    
+
+   
+    
+
+   
+    
+
+   
+   
+
+   
+
+   
+    
+
+   
+   
+
+   
+    
 
     public int getId_instrument() {
         return id_instrument;
@@ -66,13 +117,7 @@ public class Instrument {
         this.prix = prix;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+  
 
     public String getDescription() {
         return description;
@@ -82,22 +127,27 @@ public class Instrument {
         this.description = description;
     }
 
-    public int getId_vendeur() {
-        return id_vendeur;
+    public CategorieInstrument getCategorie() {
+        return categorie;
+    }
+    
+
+    public void setCategorie(CategorieInstrument categorie) {
+        this.categorie = categorie;
     }
 
-    public void setId_vendeur(int id_vendeur) {
-        this.id_vendeur = id_vendeur;
+    public String getPhoto() {
+        return photo;
     }
 
-    public int getId_categorie() {
-        return id_categorie;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
-    public void setId_categorie(int id_categorie) {
-        this.id_categorie = id_categorie;
-    }
+   
+    
 
+   
     @Override
     public int hashCode() {
         int hash = 7;
@@ -122,8 +172,16 @@ public class Instrument {
 
     @Override
     public String toString() {
-        return "Instrument{" + "id_instrument=" + id_instrument + ", nom=" + nom + ", prix=" + prix + ", photo=" + photo + ", description=" + description + ", id_vendeur=" + id_vendeur + ", id_categorie=" + id_categorie + '}';
+        return "Instrument{" + "id_instrument=" + id_instrument + ", nom=" + nom + ", prix=" + prix + ", photo=" + photo + ", description=" + description + ", categorie=" + categorie + '}';
     }
+
+   
+
+  
+
+  
+
+    
     
     
    

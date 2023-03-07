@@ -10,10 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import tn.esprit.entity.CategorieInstrument;
+import tn.esprit.entity.Instrument;
 import tn.esprit.tools.Connexion;
 
 /**
@@ -30,10 +32,10 @@ public class ServiceCategorie implements Interface<CategorieInstrument>{
     @Override
     public void ajouter(CategorieInstrument t) {
          try {
-            String sql = "INSERT INTO `categorie_instrument`(`id`,`nom`, `description`) VALUES (?,?,?)";
+            String sql = "INSERT INTO `categorie_instrument`(`id`,`nom_categorie`, `description`) VALUES (?,?,?)";
             PreparedStatement ste = cnx.prepareStatement(sql);
             ste.setInt(1, t.getId());
-            ste.setString(2, t.getNom());
+            ste.setString(2, t.getNom_categorie());
             ste.setString(3, t.getDescription());
             ste.executeUpdate();
             System.out.println("Categorie ajoutée");
@@ -53,53 +55,96 @@ public class ServiceCategorie implements Interface<CategorieInstrument>{
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        }
+     public List<String> getnom() throws SQLException {
+    List<String> ct = new ArrayList<>();
+    String sql = "SELECT nom_categorie  FROM categorie_instrument";
+    PreparedStatement statement = cnx.prepareStatement(sql);
+    ResultSet rs = statement.executeQuery();
+    while (rs.next()) {
+        ct.add(rs.getString("nom_categorie"));
+        
+                }
+    return ct;
+}
 
-    }
+
+                
+           
+
+            
+
+
+    
     
 
-    @Override
-    public void modifier( CategorieInstrument t) {
- 
+    
+    
+ public void modifier(String nom_categorie,String description,CategorieInstrument t) {
+        String sql = "update categorie_instrument set nom_categorie=? , description=? where id=?";
         try {
-            PreparedStatement pst = cnx.prepareStatement (" UPDATE categorie_instrument SET nom =? , description =? , where id=? "); 
-            pst.setInt(1, t.getId()); 
-            pst.setString(2, t.getNom());
-             pst.setString(3, t.getDescription());
-            pst.executeUpdate();
-            System.out.println("categorie modifié !");
-
+            PreparedStatement ste = cnx.prepareStatement(sql);
+            ste.setString(1, nom_categorie);
+            ste.setString(2, description);
+            
+            
+            ste.setInt(3,t.getId());
+            ste.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-       }
+ }
     
 
     
 
     @Override
-    public ObservableList afficher() {
-       String req = "SELECT * FROM categorie_instrument";
-        ObservableList<CategorieInstrument> ca = FXCollections.observableArrayList();
-        Statement stm;
+    public List<CategorieInstrument> getAllInstruments() {
+         List<CategorieInstrument> ct = new ArrayList<>();
         try {
-            stm = this.cnx.createStatement();
-            ResultSet rs = stm.executeQuery(req);
-            while (rs.next()) {
-                CategorieInstrument ct = new CategorieInstrument();
-                ct.setId(rs.getInt("id"));
-                ct.setNom(rs.getString("nom"));
-                ct.setDescription(rs.getString("description"));
-                ca.add(ct);
-                System.out.println(ct+"\n");
+            String sql = "select * from Categorie_instrument";
+            Statement ste = cnx.createStatement();
+            ResultSet s = ste.executeQuery(sql);
+            while (s.next()) {
+
+                CategorieInstrument c = new CategorieInstrument(s.getInt("id"), 
+                        s.getString("nom_categorie"), s.getString("description"));
+                ct.add(c);
+           
+
             }
+                 System.out.println(ct);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return ca;
+        return ct ;
     }
+     public CategorieInstrument findCatById (int id) { 
+        String sql = "select * from   categorie_instrument  where id = "+id;
+        CategorieInstrument c = new CategorieInstrument();
+        try{
+          PreparedStatement ste = cnx.prepareStatement(sql);
+          //ste.setInt(1,id);
+           ResultSet Res = ste.executeQuery(sql);
+           if (Res.next()){
+             c.setId(Res.getInt("id"));
+             c.setNom_categorie(Res.getString("nom_categorie"));
+             c.setDescription(Res.getString("description"));
+           }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+             return c;
+     }
+}
+           
 
+       
+    
+
+  
    
-    }
+    
  
     
 

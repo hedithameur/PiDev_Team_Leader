@@ -13,26 +13,38 @@ import javax.sound.midi.Instrument;
  */
 public class CategorieInstrument {
    private int id;
-    private String nom;
+    private String nom_categorie;
     private String description;
+   
+    
 
     public CategorieInstrument() {
-    }
-    
-
-    public CategorieInstrument(String nom, String description) {
-        this.nom = nom;
-        this.description = description;
+        
     }
 
-    public CategorieInstrument(int id, String nom, String description) {
+    public CategorieInstrument(int id, String nom_categorie) {
         this.id = id;
-        this.nom = nom;
-        this.description = description;
+        this.nom_categorie = nom_categorie;
     }
     
 
-   
+    public CategorieInstrument(String nom_categorie) {
+        this.nom_categorie = nom_categorie;
+    }
+    
+    
+
+    public CategorieInstrument(String nom_categorie, String description) {
+        this.nom_categorie = nom_categorie;
+        this.description = description;
+    }
+
+    public CategorieInstrument(int id, String nom_categorie, String description) {
+        this.id = id;
+        this.nom_categorie = nom_categorie;
+        this.description = description;
+    }
+    
 
     public int getId() {
         return id;
@@ -42,12 +54,12 @@ public class CategorieInstrument {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNom_categorie() {
+        return nom_categorie;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNom_categorie(String nom_categorie) {
+        this.nom_categorie = nom_categorie;
     }
 
     public String getDescription() {
@@ -57,6 +69,11 @@ public class CategorieInstrument {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+
+   
+
+    
 
     @Override
     public int hashCode() {
@@ -85,8 +102,20 @@ public class CategorieInstrument {
 
     @Override
     public String toString() {
-        return "CategorieInstrument{" + "nom=" + nom + ", description=" + description + '}';
+        return "CategorieInstrument{" + "id=" + id + ", nom_categorie=" + nom_categorie + ", description=" + description + '}';
     }
+
+   // public void getId(int aInt) {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+
+    public void getNom_categorie(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
+
+  
     
     
 }

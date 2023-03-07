@@ -4,23 +4,24 @@
  * and open the template in the editor.
  */
 package tn.esprit.service;
+
 import java.util.List;
-import javafx.collections.ObservableList;
 
 /**
  *
  * @author bouzi
  */
-public interface Interface <T> {
+public interface Interface<T> {
+
     // T => Categori
     // Z => Instrument
     // H => Commande Instrument
     ////////// Categorie ////////////
-     public void ajouter(T t);
-     public void supprimer(T t);
-     public void modifier(T t);
-    
-     public ObservableList afficher();
+    public void ajouter(T t);
+
+    public void supprimer(T t);
+
+    public void modifier(String nom, String description, T t);
+
+    public List<T> getAllInstruments();
 }
-        
-  
