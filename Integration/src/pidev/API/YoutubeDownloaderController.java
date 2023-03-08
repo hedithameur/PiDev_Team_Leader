@@ -34,6 +34,8 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 
 /**
@@ -51,6 +53,8 @@ private static final String YOUTUBE_DL_COMMAND = "youtube-dl --extract-audio --a
     private Button button;
     @FXML
     private VBox root;
+    @FXML
+    private Button retour;
 
     /**
      * Initializes the controller class.
@@ -139,6 +143,17 @@ private void downloadVideo(String videoUrl) {
         System.out.println("Erreur lors du téléchargement");
     }
 }
+
+    @FXML
+    private void retour(ActionEvent event) {
+            try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../frontend/CreerPlaylist.fxml"));
+            retour.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
     
     

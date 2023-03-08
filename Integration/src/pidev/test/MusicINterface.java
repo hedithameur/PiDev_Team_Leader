@@ -31,13 +31,14 @@ public class MusicINterface extends Application {
        
        Parent root = null;
         try {
-         root = FXMLLoader.load(getClass().getResource("../gui/adminlogin.fxml"));
+       //root = FXMLLoader.load(getClass().getResource("../gui/adminlogin.fxml"));
                
          
 
-// root = FXMLLoader.load(getClass().getResource("../API/youtubeDownloader.fxml"));
+//root = FXMLLoader.load(getClass().getResource("../API/youtubeDownloader.fxml"));
                  //  root = FXMLLoader.load(getClass().getResource("../gui/AfficherPlaylist.fxml"));
-                   // root = FXMLLoader.load(getClass().getResource("../gui/Stat.fxml"));
+                  root = FXMLLoader.load(getClass().getResource("../frontend/global.fxml"));
+               //  root = FXMLLoader.load(getClass().getResource("../frontend/AjouterEvenementFXML.fxml"));
                  
                   
         } catch (IOException ex) {

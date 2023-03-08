@@ -72,6 +72,8 @@ public class AjouterMusicController implements Initializable {
     private Button idmodifier;
     @FXML
     private Button back;
+    @FXML
+    private Button stat;
 
     /**
      * Initializes the controller class.
@@ -173,6 +175,17 @@ public class AjouterMusicController implements Initializable {
             //navigation
             Parent loader = FXMLLoader.load(getClass().getResource("MusicPlaylist.fxml"));
             morceauxfield.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void statistique(ActionEvent event) {
+           try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("Stat.fxml"));
+            stat.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

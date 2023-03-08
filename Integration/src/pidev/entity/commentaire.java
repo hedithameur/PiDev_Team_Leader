@@ -11,18 +11,27 @@ package pidev.entity;
  */
 public class commentaire {
    
-    private int id,id_utilisateur;
+    private int id,id_utilisateur,id_evenement;
     private String texte;
     
     
     public commentaire(){
         
     }
-    public commentaire(int id,int id_utilisateur,String texte){
+    public commentaire(int id,int id_utilisateur,String texte,int id_evenement){
         this.id=id;
         this.id_utilisateur=id_utilisateur;
         this.texte=texte;
+        this.id_evenement=id_evenement;
        
+    }
+
+    public int getId_evenement() {
+        return id_evenement;
+    }
+
+    public void setId_evenement(int id_evenement) {
+        this.id_evenement = id_evenement;
     }
     public commentaire(int id_utilisateur,String texte){
         this.id_utilisateur=id_utilisateur;
@@ -65,6 +74,3 @@ public class commentaire {
     }
        
 }
-
-    
-

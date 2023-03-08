@@ -7,12 +7,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.MusicPlaylistController">
    <children>
-      <Button fx:id="music" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" onAction="#GoMusic" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #ef6b48;" text="music" textFill="#e1dcdc" />
-      <Button fx:id="playlist" layoutX="582.0" layoutY="328.0" mnemonicParsing="false" onAction="#goPlaylist" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #ef6b48;" text="Playlist" textFill="#fcf5f5" />
-      <Text fill="#f5e1e1" layoutX="390.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entertainement" textAlignment="CENTER" wrappingWidth="191.6708984375">
+      <Button fx:id="music" layoutX="162.0" layoutY="319.0" mnemonicParsing="false" onAction="#GoMusic" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #ef6b48;" text="music" textFill="#e1dcdc" />
+      <Button fx:id="playlist" layoutX="513.0" layoutY="308.0" mnemonicParsing="false" onAction="#goPlaylist" prefHeight="51.0" prefWidth="206.0" style="-fx-background-color: #ef6b48;" text="Playlist" textFill="#fcf5f5" />
+      <Text fill="#f5e1e1" layoutX="265.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Music et Playlist" textAlignment="CENTER" wrappingWidth="377.6708984375">
          <font>
-            <Font name="Times New Roman" size="24.0" />
+            <Font name="Times New Roman" size="36.0" />
          </font>
       </Text>
+      <Button fx:id="retourMain" layoutX="45.0" layoutY="36.0" mnemonicParsing="false" onAction="#RetourAttegrationMain" prefHeight="31.0" prefWidth="75.0" text="Retour" />
    </children>
 </AnchorPane>

@@ -78,8 +78,6 @@ public class EmptyyController implements Initializable {
     private Button btnajout;
     @FXML
     private PasswordField textmotdepasse;
-    @FXML
-    private Button btnseconnecter2;
     UtilisateurService us=new UtilisateurService();
      Utilisateur u= new Utilisateur();
      
@@ -89,6 +87,8 @@ public class EmptyyController implements Initializable {
     private ComboBox<String> comb;
     @FXML
     private DatePicker date;
+    @FXML
+    private Button back;
     
     
      
@@ -204,6 +204,19 @@ public class EmptyyController implements Initializable {
         try {
             
             Parent loader = FXMLLoader.load(getClass().getResource("affichemodifsupp.fxml"));
+            afficher.getScene().setRoot(loader);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+    }
+
+    @FXML
+    private void backtomain(ActionEvent event) {
+           try {
+            
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
             afficher.getScene().setRoot(loader);
         } 
         catch (IOException ex) {

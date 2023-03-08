@@ -36,11 +36,12 @@ public class commentaireService {
          Statement ste = cnx.createStatement();
          ste.executeUpdate(sql);*/
          
-         String sql ="insert into commentaire(texte,id_utilisateur) values (?,?)";
+         String sql ="insert into commentaire(texte,id_utilisateur,id_evenement) values (?,?,?)";
          
          PreparedStatement ste =cnx.prepareStatement(sql);
          ste.setString(1,c.getTexte());
          ste.setInt(2,c.getId_utilisateur());
+         ste.setInt(3,c.getId_evenement());
         
         
         // Statement ste = cnx.createStatement();
@@ -66,7 +67,27 @@ public class commentaireService {
          while(res.next())
          {
             
-             commentaire c = new commentaire(res.getInt(1),res.getInt(3),res.getString("texte"));
+             commentaire c = new commentaire(res.getInt(1),res.getInt(3),res.getString("texte"),res.getInt("id_evenement"));
+         comments.add(c);
+         }
+     } catch (SQLException ex) {
+         Logger.getLogger(EvenementService.class.getName()).log(Level.SEVERE, null, ex);
+     }
+        return comments;
+    }
+    public List<commentaire> affichierCommentaireByIdEvent(int id) {
+     List<commentaire> comments = new ArrayList<>();
+        try {
+         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+         sql="select * from commentaire where id_evenement="+id;
+         Statement ste =cnx.createStatement();
+         ResultSet res = ste.executeQuery(sql);
+         
+         while(res.next())
+         {
+            
+             commentaire c = new commentaire(res.getInt(1),res.getInt(3),res.getString("texte"),res.getInt("id_evenement"));
          comments.add(c);
          }
      } catch (SQLException ex) {
@@ -102,5 +123,3 @@ public class commentaireService {
     }
     
 }
-
-

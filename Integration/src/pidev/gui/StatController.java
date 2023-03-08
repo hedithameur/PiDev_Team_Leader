@@ -5,14 +5,19 @@
  */
 package pidev.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import pidev.entity.music;
 import pidev.services.musicService;
@@ -28,6 +33,8 @@ musicService ms = new musicService();
     private PieChart pieChart;
     @FXML
     private Label statusLabel;
+    @FXML
+    private Button retour;
 
     /**
      * Initializes the controller class.
@@ -58,5 +65,16 @@ musicService ms = new musicService();
         pieChart.setData(FXCollections.observableArrayList(data));
         // TODO
     }    
+
+    @FXML
+    private void back(ActionEvent event) {
+               try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("MusicPlaylist.fxml"));
+            retour.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     
 }

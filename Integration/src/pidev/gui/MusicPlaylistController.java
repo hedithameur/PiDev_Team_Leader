@@ -26,6 +26,8 @@ public class MusicPlaylistController implements Initializable {
     private Button music;
     @FXML
     private Button playlist;
+    @FXML
+    private Button retourMain;
 
     /**
      * Initializes the controller class.
@@ -52,6 +54,17 @@ public class MusicPlaylistController implements Initializable {
         try {
             //navigation
             Parent loader = FXMLLoader.load(getClass().getResource("AjouterPlaylist.fxml"));
+            playlist.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void RetourAttegrationMain(ActionEvent event) {
+          try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
             playlist.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

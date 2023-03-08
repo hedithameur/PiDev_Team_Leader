@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="254.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.ModelController">
+   <children>
+      <ImageView fx:id="imgid" fitHeight="150.0" fitWidth="243.0" onMousePressed="#commander" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@jjj.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="nomid" prefHeight="30.0" prefWidth="136.0" text="nom" textFill="#edebebdf">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label fx:id="prixid" prefHeight="30.0" prefWidth="144.0" text="prix" textFill="#edebebde">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Label>
+   </children>
+</VBox>

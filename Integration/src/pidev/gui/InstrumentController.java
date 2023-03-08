@@ -294,7 +294,7 @@ public class InstrumentController implements Initializable {
         prixcolumn.setCellValueFactory(new PropertyValueFactory<>("prix"));
         photocolumn.setCellValueFactory(new PropertyValueFactory<>("photo"));
         descriptioncolumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-        idcc.setCellValueFactory(new PropertyValueFactory<>("cat_nom"));
+        //idcc.setCellValueFactory(new PropertyValueFactory<>("cat_nom"));
 
         tableaucategorie.setItems(list);
         textsearch.setPromptText("recherche");

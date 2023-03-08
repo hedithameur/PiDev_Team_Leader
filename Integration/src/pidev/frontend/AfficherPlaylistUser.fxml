@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="794.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.AfficherPlaylistUserController">
+   <children>
+      <TableView fx:id="tabmusic" layoutX="484.0" layoutY="126.0" prefHeight="296.0" prefWidth="324.0">
+        <columns>
+          <TableColumn fx:id="Morceaux" prefWidth="102.0" text="morceaux" />
+          <TableColumn fx:id="ColArtiste" prefWidth="87.0" text="Artiste" />
+            <TableColumn fx:id="playcolumn" prefWidth="76.0" text="fichier" />
+        </columns>
+      </TableView>
+      <ListView fx:id="ListView" layoutX="6.0" layoutY="123.0" prefHeight="303.0" prefWidth="221.0" />
+      <Button fx:id="Ajouter" layoutX="575.0" layoutY="444.0" mnemonicParsing="false" onAction="#AjouterMusicPlaylist" prefHeight="31.0" prefWidth="233.0" style="-fx-background-color: #ef6b48;" text="Ajouter musique a votre playlist" textFill="#f5efef" />
+      <Label layoutX="57.0" layoutY="48.0" prefHeight="35.0" prefWidth="184.0" text="votre playlist" textFill="#f2e8e8">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="676.0" layoutY="66.0" prefHeight="21.0" prefWidth="135.0" text="music" textFill="#eee7e7">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button fx:id="affiche" layoutX="31.0" layoutY="444.0" mnemonicParsing="false" onAction="#afficherMUSIC" prefHeight="31.0" prefWidth="279.0" style="-fx-background-color: #ef6b48;" text="Afficher les morceaux de votre playlist" textFill="#f8f4f4" />
+      <Button fx:id="playMusic" layoutX="33.0" layoutY="486.0" mnemonicParsing="false" onAction="#play" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #ef6b48;" text="playMusic" textFill="#f2e8e8" />
+      <Button fx:id="backup" layoutX="31.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #ef6b48;" text="back" textFill="#fff9f9" />
+      <Label layoutX="244.0" layoutY="25.0" prefHeight="40.0" prefWidth="262.0" text="Votre Playlist" textAlignment="CENTER" textFill="#f2efef">
+         <font>
+            <Font name="Times New Roman" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="stop" layoutX="179.0" layoutY="486.0" mnemonicParsing="false" onAction="#StopMuisc" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #ef6b48;" text="stopMusic" textFill="#f8f3f3" />
+      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="629.0" layoutY="318.0" />
+      <ListView fx:id="listview2" layoutX="244.0" layoutY="123.0" prefHeight="296.0" prefWidth="221.0" />
+      <Button fx:id="AFFICHERplaylistsS" layoutX="343.0" layoutY="444.0" mnemonicParsing="false" onAction="#AFFICHERvotreplaylists" prefHeight="31.0" prefWidth="150.0" text="Afficher les Playlists" />
+   </children>
+</AnchorPane>

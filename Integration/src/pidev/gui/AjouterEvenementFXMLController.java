@@ -99,7 +99,7 @@ String nomPath;
                 
                 is = new FileInputStream(new File(f.getAbsolutePath()));
 //             
-                os = new FileOutputStream(new File("C:\\Users\\21650\\Desktop\\PiDev\\src\\pidev\\ressources\\" + f.getName()));
+                os = new FileOutputStream(new File("C:\\Users\\user\\Documents\\NetBeansProjects\\Integration\\src\\pidev\\Images\\" + f.getName()));
                 byte[] buffer = new byte[1024];
                 int length;
                 while ((length = is.read(buffer)) > 0) {
@@ -113,7 +113,7 @@ String nomPath;
 
             }
 
-            File file = new File("/ressources/" + f.getName());
+            File file = new File("/Images/" + f.getName());
 //            System.out.println(file.toURI().toString());
             //UserImg.setImage(new Image(file.toURI().toString()));
             String Imguser = f.getName();
@@ -125,7 +125,7 @@ String nomPath;
         }
         
         
-                label_affiche.setText("/ressources/" + f.getName());
+                label_affiche.setText("/Images/" + f.getName());
 
     }
 

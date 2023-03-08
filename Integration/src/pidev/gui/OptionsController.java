@@ -26,6 +26,8 @@ public class OptionsController implements Initializable {
     private Button btnTickets;
     @FXML
     private Button btnCommandes;
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -51,6 +53,17 @@ public class OptionsController implements Initializable {
         try {
             //navigation
             Parent loader = FXMLLoader.load(getClass().getResource("Commande.fxml"));
+            btnTickets.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void retour(ActionEvent event) {
+            try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
             btnTickets.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

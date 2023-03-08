@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.CotéclientController">
+   <children>
+      <TextField fx:id="nomid" layoutX="242.0" layoutY="210.0" promptText="Entrer nom" />
+      <TextField fx:id="prixid" layoutX="242.0" layoutY="263.0" promptText="Entrer prix" />
+      <TextField fx:id="descriptionid" layoutX="242.0" layoutY="311.0" promptText="Entrer description" />
+      <ComboBox fx:id="combo" layoutX="242.0" layoutY="159.0" prefWidth="150.0" promptText="Categorie" />
+      <Button fx:id="importid" layoutX="214.0" layoutY="359.0" mnemonicParsing="false" onAction="#ajouterphoto" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #ef6b48;" text="Importer" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Button layoutX="342.0" layoutY="359.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="29.0" prefWidth="86.0" style="-fx-background-color: #ef6b48;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Text fx:id="yar" layoutX="160.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Label layoutX="39.0" layoutY="113.0" text=" ajouter un instrument a vendre" textFill="#eb881e">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="162.0" text="Catégorie" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="213.0" text="Nom" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="266.0" prefHeight="17.0" prefWidth="34.0" text="Prix" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="314.0" text="Description" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="96.0" fitWidth="136.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="retourid" layoutX="478.0" layoutY="361.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+   </children>
+</AnchorPane>

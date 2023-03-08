@@ -26,5 +26,6 @@
             <Font name="Times New Roman" size="36.0" />
          </font>
       </Text>
+      <Button fx:id="retour" layoutX="29.0" layoutY="40.0" mnemonicParsing="false" onAction="#retour" text="retour" />
    </children>
 </AnchorPane>

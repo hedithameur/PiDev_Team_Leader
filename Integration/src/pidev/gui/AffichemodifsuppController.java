@@ -293,7 +293,7 @@ public class AffichemodifsuppController implements Initializable {
         
         try {
             
-            Parent loader = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
             exit.getScene().setRoot(loader);
         } 
         catch (IOException ex) {

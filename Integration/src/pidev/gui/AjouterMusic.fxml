@@ -25,5 +25,6 @@
       <Button fx:id="GoAfficher" layoutX="63.0" layoutY="470.0" mnemonicParsing="false" onAction="#AffichWent" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #ef6b48;" text="Afficher" textFill="#f8eeee" />
       <Button fx:id="idmodifier" layoutX="321.0" layoutY="470.0" mnemonicParsing="false" onAction="#GoModifier" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #ef6b48;" text="modifier" textFill="#eee8e8" />
       <Button fx:id="back" layoutX="12.0" layoutY="22.0" mnemonicParsing="false" onAction="#backEntertainement" text="back" />
+      <Button fx:id="stat" layoutX="527.0" layoutY="591.0" mnemonicParsing="false" onAction="#statistique" prefHeight="31.0" prefWidth="248.0" style="-fx-background-color: #ef6b48;" text="voir statistique morceaux" textFill="#fcf3f3" />
    </children>
 </AnchorPane>

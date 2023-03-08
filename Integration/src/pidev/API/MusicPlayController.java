@@ -6,6 +6,7 @@
 package pidev.API;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -14,7 +15,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -51,6 +54,8 @@ musicService M = new musicService();
     
     @FXML
     private ComboBox<String> fichiercombo;
+    @FXML
+    private Button retour;
      
 
     /**
@@ -104,6 +109,17 @@ primaryStage.show();
 
     private Object File(String musicFile) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @FXML
+    private void retour(ActionEvent event) {
+            try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../frontend/CreerPlaylist.fxml"));
+            retour.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }

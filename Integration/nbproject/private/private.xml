@@ -5,57 +5,106 @@
         <group>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Commande.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Commentaire_Rec.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/StatController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/MusicPlaylistController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/CardController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/adminlogin.fxml</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/music_playlistService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/UtilisateurService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/ModifierCommentaireController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/musicService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/test/MusicINterface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/ArtistedashController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/ArtisteloginController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/EmailController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Utilisateur.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/CategorieController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Evenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/IServiceReclamation.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/PublicationController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AffichertableauController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/API/YoutubeDownloaderController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/IServiceCommentaire_Rec.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceReclamation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/CotéclientController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/CommenterController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/CommandeService.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AfficherTableController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/EmptyyController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/MembredashController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Annonce.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AjouterReclamationController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/SuiviTableController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/PasswordController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceInstrument.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Cotéclient.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/InscriptionuserController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/sms.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AjouterPlaylistController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfaceService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/SingleEventModel.fxml</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceComm.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/Integration/IntegrationAceuilController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfaceEvenement.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/CategorieInstrument.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/OptionsController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfaceMusic.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AnnonceController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/DashmembreController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/InstrumentController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/StatistiqueController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Reclamation.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/commentaire.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/playlist_interface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Login.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/GlobalController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/global.fxml</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Instrument.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Commande_instruments.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AfficherTableau2Controller.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AjouterMusicController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/CommandeController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AffichemodifsuppController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AjouterEvenementFXMLController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Ticket.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Dashboard.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Acceuil.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Model.fxml</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/TicketController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/Interface.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/TicketService.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceCategorie.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceCommande.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AfficherPlaylistUser.fxml</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/SuiviTableController.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/PlayListService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/dashmembre.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/StatController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/MembredashController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/music_playlistService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/SingleEventModelController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/UtilisateurService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/ModifierCommentaireController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AjouterEvenementFXML.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/musicService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/password.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/test/MusicINterface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/ModelController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/CategorieController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/IServiceReclamation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/PublicationController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/CreerPlaylistController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AcheterController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceReclamation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AfficherTableController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/EventFXMain.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/EmptyyController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/API/MusicPlayController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/DashboardController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/ModelEventController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/Integration/IntegrationAceuilController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfaceEvenement.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/CategorieInstrument.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/inscriptionuser.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/OptionsController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/InterfaceMusic.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Reclamation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/acheter.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/artistelogin.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AdminloginController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/Email.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AjouterEvenementFXMLController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/playlist_interface.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/inscriptionartiste.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/membredash.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/gui/AffichemodifsuppController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/artistedash.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/entity/Ticket.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/TicketService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/commentaireService.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/InscriptionartisteController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AjouterReclamation.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/services/ServiceCommande.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/CommentaireController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/AcceuilController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/Integration/src/pidev/frontend/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

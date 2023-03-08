@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.ArtisteloginController">
+   <children>
+      <Label layoutX="113.0" layoutY="200.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="113.0" layoutY="250.0" text="Mot de passe" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emaila" layoutX="212.0" layoutY="197.0" />
+      <PasswordField fx:id="mdpsa" layoutX="212.0" layoutY="247.0" />
+      <Hyperlink fx:id="linkpwd" layoutX="391.0" layoutY="248.0" onAction="#gotopwd" text="Mot de passe oublié ?" />
+      <Button fx:id="btnseconnecter" layoutX="391.0" layoutY="329.0" mnemonicParsing="false" onAction="#connecter" style="-fx-background-color: #ef6b48;" text="Se connecter">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="130.0" fitWidth="159.0" layoutX="207.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@membre.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="retour" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onAction="#retour" text="Retour" textFill="#ff7802">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
