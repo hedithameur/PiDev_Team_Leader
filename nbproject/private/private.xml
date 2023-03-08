@@ -3,13 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/entity/Ticket.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/services/CommandeService.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/entity/Commande.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/gui/TicketController.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/gui/CommandeController.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/services/InterfaceService.java</file>
-            <file>file:/C:/Users/hedit/Downloads/pidev_version_marche/src/tn/esprit/services/TicketService.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/Ticket.fxml</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/services/TicketService.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/entity/Evenement.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/entity/Ticket.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/tools/MaConnection.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/OptionsController.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/Commande.fxml</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/tests/NewFXMain.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/commandefront.fxml</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/CommandeController.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/entity/Commande.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/services/CommandeService.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/TicketController.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/ticketfront.fxml</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/TicketfrontController.java</file>
+            <file>file:/C:/Users/hedit/Downloads/pidev_front/src/tn/esprit/gui/commandefrontController.java</file>
         </group>
     </open-files>
 </project-private>

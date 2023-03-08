@@ -85,13 +85,7 @@ public class TicketController implements Initializable {
     @FXML
     private Button Reset;
     @FXML
-    private Button deletebtn;
-    @FXML
-    private Button updatebtn;
-    @FXML
     private TextField id;
-    @FXML
-    private Button exportButton;
   
     //private int itemsPerPage = 5;
     @FXML
@@ -99,6 +93,12 @@ public class TicketController implements Initializable {
     
     TicketService ps =  new TicketService();
     Ticket p = new Ticket();
+    @FXML
+    private Button updatebtn;
+    @FXML
+    private Button deletebtn;
+    @FXML
+    private Button exportButton;
 
     /**
      * Initializes the controller class.

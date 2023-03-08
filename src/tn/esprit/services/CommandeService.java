@@ -128,5 +128,22 @@ public class CommandeService implements InterfaceService<Commande> {
         }
         return commandes;
     }
-   
+  
+    //affichage de commande front
+    public List<Commande> getCommandeById(int idTicket, int idUtilisateur) {
+    List<Commande> commandes = new ArrayList<>();
+    try (
+         PreparedStatement ps = cnx.prepareStatement("SELECT nom_evenement, prix FROM commande_ticket WHERE id_ticket = ? AND id_utilisateur = ?")) {
+        ps.setInt(1, idTicket);
+        ps.setInt(2, idUtilisateur);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Commande commande = new Commande(rs.getString("nom_evenement"), rs.getDouble("prix"));
+            commandes.add(commande);
+        }
+    } catch (SQLException ex) {
+        System.err.println("Error retrieving commandes: " + ex.getMessage());
+    }
+    return commandes;
+}
 }

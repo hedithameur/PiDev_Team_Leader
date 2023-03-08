@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="833.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.gui.commandefrontController">
+   <children>
+      <Label layoutX="66.0" layoutY="45.0" text="id" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="15.0" layoutY="79.0" prefHeight="21.0" prefWidth="134.0" text="nom_evenement" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="56.0" layoutY="116.0" text="prix" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="150.0" prefHeight="21.0" prefWidth="69.0" text="id_ticket" visible="false" />
+      <Label layoutX="36.0" layoutY="190.0" prefHeight="21.0" prefWidth="92.0" text="id_utilisateur" visible="false" />
+      <TextField fx:id="id" disable="true" layoutX="186.0" layoutY="40.0" visible="false" />
+      <TextField fx:id="nom_evenement" layoutX="186.0" layoutY="74.0" />
+      <TextField fx:id="prix" layoutX="186.0" layoutY="111.0" />
+      <TextField fx:id="id_ticket" disable="true" layoutX="186.0" layoutY="145.0" visible="false" />
+      <TextField fx:id="id_utilisateur" disable="true" layoutX="187.0" layoutY="175.0" visible="false" />
+      <Button fx:id="idback" layoutX="10.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #ef6b48;" text="Back" />
+      <Button fx:id="idadd" layoutX="67.0" layoutY="222.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #ef6b48;" text="Commander" />
+      <Button fx:id="deletebtn" layoutX="204.0" layoutY="222.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #ef6b48;" text="Annuler commande" />
+      <TableView fx:id="tabcommande" layoutX="400.0" layoutY="28.0" onMouseClicked="#handleMouseAction" onSort="#affichetable" prefHeight="293.0" prefWidth="409.0">
+        <columns>
+          <TableColumn fx:id="idtab" minWidth="0.0" prefWidth="0.0" text="id" />
+            <TableColumn fx:id="id_tickettab" minWidth="0.0" prefWidth="2.0" text="id_ticket" />
+            <TableColumn fx:id="id_utilisateurtab" minWidth="0.0" prefWidth="0.0" text="id_utilisateur" />
+            <TableColumn fx:id="prixtab" prefWidth="177.0" text="prix" />
+          <TableColumn fx:id="nom_evenementtab" prefWidth="240.0" text="nom_evenement" />
+        </columns>
+      </TableView>
+      <Button fx:id="Reset" layoutX="281.0" layoutY="306.0" mnemonicParsing="false" onAction="#Reset" style="-fx-background-color: #ef6b48;" text="Reset" />
+      <Button fx:id="pdfbtn" layoutX="30.0" layoutY="306.0" mnemonicParsing="false" onAction="#pdf" style="-fx-background-color: #ef6b48;" text="Imprimer la commande" />
+      <ImageView fitHeight="117.0" fitWidth="128.0" layoutX="619.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logoteamleader.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

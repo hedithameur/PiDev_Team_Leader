@@ -14,6 +14,11 @@ public class Commande {
     double prix;
     private String nom_evenement;
 
+    public Commande(String nom_evenement, double prix) {
+        this.prix = prix;
+        this.nom_evenement = nom_evenement;
+    }
+
     public Commande() {
     }
 

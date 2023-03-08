@@ -23,6 +23,7 @@ public class NewFXMain extends Application {
    @Override
     public void start(Stage primaryStage) throws Exception {
          try {
+            //Parent root = FXMLLoader.load(getClass().getResource("/tn/esprit/gui/ticketfront.fxml"));
             Parent root = FXMLLoader.load(getClass().getResource("/tn/esprit/gui/Options.fxml"));
             Scene scene = new Scene(root, 1000, 600);
             

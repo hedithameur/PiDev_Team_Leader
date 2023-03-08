@@ -116,7 +116,7 @@ public class TicketService implements InterfaceService<Ticket>  {
 
     @Override
     public List<Ticket> findById(int id) {
-        List<Ticket> commandes = new ArrayList<>();
+        List<Ticket> tickets = new ArrayList<>();
         try {
             String sql = "select prix, nb_tickets, type, id_evenement from ticket where id=?";
             PreparedStatement ste = cnx.prepareStatement(sql);
@@ -125,11 +125,32 @@ public class TicketService implements InterfaceService<Ticket>  {
             while (s.next()) {
                 Ticket c = new Ticket(id, s.getDouble(2),s.getInt(3),
                         s.getString("type"), s.getInt(5));
-                commandes.add(c);
+                tickets.add(c);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return commandes;
+        return tickets;
+    }
+    //function that retrieves the tickets from a specif event
+    public List<Ticket> findByEventId(int eventId) {
+        List<Ticket> tickets = new ArrayList<>();
+        String query = "SELECT prix,nb_tickets,type,id_evenement FROM ticket WHERE id_evenement = ?";
+        try (PreparedStatement stmt = cnx.prepareStatement(query)) {
+        stmt.setInt(1, eventId);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Ticket ticket = new Ticket(
+                rs.getDouble("prix"),
+                rs.getInt("nb_tickets"),
+                rs.getString("type"),
+                rs.getInt("id_evenement")
+            );
+            tickets.add(ticket);
+        }
+    } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return tickets;
     }
 }
