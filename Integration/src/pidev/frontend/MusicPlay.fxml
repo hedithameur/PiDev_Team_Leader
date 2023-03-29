@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.MusicPlayController">
+   <children>
+      <Button fx:id="play" layoutX="90.0" layoutY="450.0" mnemonicParsing="false" onAction="#PlayMusic" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #ef6b48;" text="Play" textFill="#ebe5e5">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+      <Button fx:id="Stop" layoutX="398.0" layoutY="450.0" mnemonicParsing="false" onAction="#StopMusic" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #ef6b48;" text="Stop" textFill="#f5eded">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="74.0" layoutY="14.0" />
+      <Button fx:id="Pause" layoutX="694.0" layoutY="448.0" mnemonicParsing="false" onAction="#PauseMusic" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #ef6b48;" text="Pause" textFill="#f5eeee">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+      <ComboBox layoutX="-367.0" layoutY="-127.0" prefWidth="150.0" />
+      <ComboBox fx:id="fichiercombo" layoutX="314.0" layoutY="251.0" prefHeight="40.0" prefWidth="349.0" />
+      <Label layoutX="122.0" layoutY="162.0" text="Choisir la music que voulez ecoutez" textFill="#f5efef">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Text fill="#ef6b48" layoutX="368.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listen Music" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="retour" layoutX="29.0" layoutY="40.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #ef6b48;" text="retour" textFill="#e1d7d7">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

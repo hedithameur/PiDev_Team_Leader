@@ -10,30 +10,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="checkartiste" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.LoginController">
+<AnchorPane id="AnchorPane" fx:id="checkartiste" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.LoginController">
    <children>
-      <Label fx:id="labelemail2" layoutX="124.0" layoutY="200.0" text="Email" textFill="WHITE">
+      <Label fx:id="labelemail2" layoutX="123.0" layoutY="219.0" text="Email" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="labelmotdepasse2" layoutX="124.0" layoutY="239.0" text="Mot de passe" textFill="WHITE">
+      <Label fx:id="labelmotdepasse2" layoutX="117.0" layoutY="305.0" text="Mot de passe" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="textemail2" layoutX="226.0" layoutY="197.0" promptText="saisir votre email" />
-      <PasswordField fx:id="textmotdepasse2" layoutX="226.0" layoutY="236.0" promptText="saisir votre mot de passe" />
-      <Button fx:id="btnseconnecter" layoutX="403.0" layoutY="317.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #ef6b48;" text="Se connecter">
+      <TextField fx:id="textemail2" layoutX="433.0" layoutY="210.0" prefHeight="53.0" prefWidth="384.0" promptText="saisir votre email" />
+      <PasswordField fx:id="textmotdepasse2" layoutX="433.0" layoutY="293.0" prefHeight="58.0" prefWidth="384.0" promptText="saisir votre mot de passe" />
+      <Button fx:id="btnseconnecter" layoutX="733.0" layoutY="530.0" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #ef6b48;" text="Se connecter">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Hyperlink fx:id="linkpwd" layoutX="249.0" layoutY="274.0" onAction="#gotopwd" text="Mot de passe oublié ?" />
-      <ImageView fitHeight="132.0" fitWidth="149.0" layoutX="206.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <Hyperlink fx:id="linkpwd" layoutX="460.0" layoutY="375.0" onAction="#gotopwd" text="Mot de passe oublié ?" textFill="#f5f3f3">
+         <font>
+            <Font size="24.0" />
+         </font></Hyperlink>
+      <ImageView fitHeight="116.0" fitWidth="187.0" layoutX="413.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@membre.png" />
          </image>
       </ImageView>
+      <Button fx:id="retourdash" layoutX="30.0" layoutY="41.0" mnemonicParsing="false" onAction="#retourmembre" prefHeight="31.0" prefWidth="105.0" text="Retour" textFill="#d34e4e">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

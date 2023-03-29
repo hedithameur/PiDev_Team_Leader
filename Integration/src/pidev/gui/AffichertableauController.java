@@ -5,6 +5,7 @@
  */
 package pidev.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +14,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -60,6 +63,8 @@ public class AffichertableauController implements Initializable {
     private Text idtext;
     @FXML
     private Button ajouterid;
+    @FXML
+    private Button back;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -141,7 +146,19 @@ public class AffichertableauController implements Initializable {
     
         }
 }
-}
+
+    @FXML
+    private void backtomenu(ActionEvent event) {
+              try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
+            back.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    }
+
 
  
 

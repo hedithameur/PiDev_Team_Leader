@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxWidth="1000.0" prefHeight="1100.0" prefWidth="1000.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.SingleEventModelController">
+<AnchorPane id="AnchorPane" maxWidth="1000.0" prefHeight="1100.0" prefWidth="1000.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.SingleEventModelController">
    <children>
       <VBox maxWidth="1000.0" prefHeight="1000.0" prefWidth="1000.0">
          <children>
@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ressources/logo.png" />
+                        <Image url="@logo.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="40.0" top="20.0" />

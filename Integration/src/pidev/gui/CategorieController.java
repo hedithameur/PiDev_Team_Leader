@@ -63,6 +63,8 @@ CategorieInstrument c = new CategorieInstrument() ;
     @FXML
     private TableColumn<CategorieInstrument, String> nomcomlumn;
     private ObservableList<CategorieInstrument> inst;
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -181,5 +183,17 @@ CategorieInstrument c = new CategorieInstrument() ;
         descriptioncolumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableauinstrument.setItems(listCat);
     }
+
+    @FXML
+    private void back(ActionEvent event) {
+                try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
+            back.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+    }
+    
     

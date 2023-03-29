@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pidev.API;
+package pidev.frontend;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +41,7 @@ import pidev.services.musicService;
 public class MusicPlayController implements Initializable {
 music m = new music();
 musicService M = new musicService();
-
+private int userId;
     @FXML
     private Button play;
     @FXML
@@ -56,7 +56,10 @@ musicService M = new musicService();
     private ComboBox<String> fichiercombo;
     @FXML
     private Button retour;
-     
+          public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
 
     /**
      * Initializes the controller class.
@@ -113,10 +116,16 @@ primaryStage.show();
 
     @FXML
     private void retour(ActionEvent event) {
-            try {
+                            try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("../frontend/CreerPlaylist.fxml"));
-            retour.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("CreerPlaylist.fxml"));
+    Parent root = loader.load();
+    
+ CreerPlaylistController creerplaylistController = loader.getController();
+    creerplaylistController.setUserId(userId);
+    
+    retour.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

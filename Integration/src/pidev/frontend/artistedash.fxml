@@ -7,36 +7,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.ArtistedashController">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.ArtistedashController">
    <children>
-      <Label layoutX="199.0" layoutY="44.0" prefHeight="49.0" prefWidth="101.0" text="Bienvenue " textFill="WHITE">
+      <Label layoutX="294.0" layoutY="28.0" prefHeight="70.0" prefWidth="453.0" text="Bienvenue Artiste" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="48.0" />
          </font>
       </Label>
-      <Button layoutX="72.0" layoutY="139.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" style="-fx-background-color: #ef6b48;" text="Ajouter évenement">
+      <Button fx:id="addEvent" layoutX="170.0" layoutY="139.0" mnemonicParsing="false" onAction="#AddEvent" prefHeight="51.0" prefWidth="269.0" style="-fx-background-color: #ef6b48;" text="Ajouter évenement" textFill="#f2ecec">
          <font>
-            <Font name="System Bold Italic" size="13.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="352.0" layoutY="139.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" style="-fx-background-color: #ef6b48;" text="Ajouter musique">
+      <Button fx:id="musicAdd" layoutX="571.0" layoutY="139.0" mnemonicParsing="false" onAction="#AddMusic" prefHeight="51.0" prefWidth="294.0" style="-fx-background-color: #ef6b48;" text="Ajouter musique" textFill="#ebe4e4">
          <font>
-            <Font name="System Bold Italic" size="13.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
       </Button>
-      <Label fx:id="labelnom" layoutX="330.0" layoutY="44.0" prefHeight="49.0" prefWidth="170.0" text="a" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="105.0" fitWidth="101.0" layoutX="239.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="232.0" fitWidth="237.0" layoutX="405.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="deconnexion" layoutX="244.0" layoutY="344.0" mnemonicParsing="false" onAction="#gotoglobal" style="-fx-background-color: #ffffff;" text="Déconnexion" textFill="#e8560d">
+      <Button fx:id="deconnexion" layoutX="430.0" layoutY="595.0" mnemonicParsing="false" onAction="#gotoglobal" style="-fx-background-color: #ffffff;" text="Déconnexion" textFill="#e8560d">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Button>
    </children>

@@ -56,7 +56,10 @@ public class LoginController implements Initializable {
 
    
     Connection cnx ;
-   
+    @FXML
+    private Button retourdash;
+    
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -118,6 +121,7 @@ public class LoginController implements Initializable {
             
             if (resultSet.next()) {
                 String role = resultSet.getString("role");
+                   int  userId = resultSet.getInt("id");
                 if (role.equals("Membre")) {
                    /* Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("ok");
@@ -126,8 +130,12 @@ public class LoginController implements Initializable {
                     alert.showAndWait();*/
                     try {
             
-            Parent loader = FXMLLoader.load(getClass().getResource("dashmembre.fxml"));
-            btnseconnecter.getScene().setRoot(loader);
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashmembre.fxml"));
+    Parent root = loader.load();
+    
+    DashmembreController membreController = loader.getController();
+    membreController.setUserId(userId);
+            btnseconnecter.getScene().setRoot(root);
         } 
         catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -151,7 +159,20 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     } 
-    }}
+    }
+
+    @FXML
+    private void retourmembre(ActionEvent event) {
+             try {
+            
+            Parent loader = FXMLLoader.load(getClass().getResource("inscriptionuser.fxml"));
+            retourdash.getScene().setRoot(loader);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}
    
 
   

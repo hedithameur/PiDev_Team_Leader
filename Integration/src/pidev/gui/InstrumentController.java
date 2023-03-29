@@ -30,6 +30,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -71,8 +72,10 @@ import javax.imageio.ImageIO;
 import static jdk.nashorn.internal.objects.NativeRegExp.source;
 import pidev.entity.CategorieInstrument;
 import pidev.entity.Instrument;
+import pidev.entity.Utilisateur;
 import pidev.services.ServiceCategorie;
 import pidev.services.ServiceInstrument;
+import pidev.services.UtilisateurService;
 import pidev.tools.MaConnection;
 
 /**
@@ -81,10 +84,11 @@ import pidev.tools.MaConnection;
  * @author bouzi
  */
 public class InstrumentController implements Initializable {
-
+  Utilisateur u = new Utilisateur();
     ServiceInstrument ps = new ServiceInstrument();
     Instrument p = new Instrument();
     ServiceCategorie m = new ServiceCategorie();
+    UtilisateurService U = new UtilisateurService();
     private ObservableList<Instrument> categorie;
     @FXML
     private TextField nomid;
@@ -134,8 +138,6 @@ public class InstrumentController implements Initializable {
     @FXML
     private Text yar;
     @FXML
-    private TableColumn<CategorieInstrument, String> idcc;
-    @FXML
     private Button statid;
     @FXML
     private Button acc;
@@ -147,6 +149,8 @@ public class InstrumentController implements Initializable {
     private ImageView imageqr;
     @FXML
     private Button butonnqr;
+  @FXML
+    private ComboBox<String> comboUser;
 
     public InstrumentController() {
         cnx = MaConnection.getInstance().getCnx();
@@ -159,15 +163,43 @@ public class InstrumentController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         aff();
-        try {
-            List<Instrument> categorie = ps.newaffciher();
-            ObservableList<String> options = FXCollections.observableArrayList(m.getnom());
-            idcombo.setItems(options);
-            String selectednom = idcombo.getValue();
+     
+           try {
+      List<Instrument> categorie = ps.newaffciher();
+      ObservableList<String> options = FXCollections.observableArrayList(m.getnom());
+      idcombo.setItems(options);
+      String selectednom = idcombo.getValue();
+      ObservableList<String> o = FXCollections.observableArrayList(U.getNom());
+      comboUser.setItems(o);
+      String selected = comboUser.getValue();
+      if (!o.isEmpty()) {
+      comboUser.setValue(o.get(0));
+      }
+      } catch (SQLException ex) {
+      Logger.getLogger(InstrumentController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+ /*try {
+        List<Instrument> categories = ps.newaffciher();
+        ObservableList<String> categoryOptions = FXCollections.observableArrayList(m.getnom());
+        idcombo.setItems(categoryOptions);
+        String selectedCategory = idcombo.getValue();
+ObservableList<String> userOptions = FXCollections.observableArrayList();
+List<Utilisateur> usersList = U.getAll();
+for (Utilisateur u : usersList) {
+    userOptions.add(u.getNom());
+}
+if (comboUser != null) {
+    comboUser.getItems().addAll(userOptions);
 
-        } catch (SQLException ex) {
-            Logger.getLogger(InstrumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    if (!userOptions.isEmpty()) {
+        comboUser.setValue(userOptions.get(0));
+    }
+} else {
+    System.out.println("comboUser is null!");
+}
+    } catch (SQLException ex) {
+        Logger.getLogger(InstrumentController.class.getName()).log(Level.SEVERE, null, ex);
+    }*/
     }
 
     @FXML
@@ -193,8 +225,30 @@ public class InstrumentController implements Initializable {
                     int IDD_C = c.getInt("id");
                     IDlisteC.add(IDD_C);
                 }
-                int FINAL_ID_C = IDlisteC.get(0);
-
+               String userSelectionnee = comboUser.getValue();
+String sqlGetIdUser = "SELECT id FROM utilisateur WHERE nom='" + userSelectionnee + "'";
+Statement statement;
+ObservableList<Integer> idList = FXCollections.observableArrayList();
+try {
+    statement = cnx.createStatement();
+    ResultSet resultSet = statement.executeQuery(sqlGetIdUser);
+    while (resultSet.next()) {
+        int id = resultSet.getInt("id");
+        idList.add(id);
+    }
+} catch (SQLException ex) {
+    System.out.println(ex.getMessage());
+}
+if (idList.isEmpty()) {
+    System.out.println(" l'utilisateur sélectionné n'existe pas dans la table utilisateur");
+    // afficher une erreur et sortir de la méthode
+    return;
+}
+          int idUser = idList.get(0);
+System.out.println("ID utilisateur: " + idUser);      
+int FINAL_ID_C = IDlisteC.get(0);
+ Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setId(idUser);
                 System.out.println(FINAL_ID_C);
                 //id de 
                 CategorieInstrument cc = new CategorieInstrument();
@@ -206,8 +260,9 @@ public class InstrumentController implements Initializable {
                 p.setPrix(Float.parseFloat(prixid.getText()));;
                 p.setPhoto(yar.getText());
                 p.setDescription(descriptionid.getText());
+                p.setUser(utilisateur);
 
-                ps.ajouterphoto(p);
+                ps.ajouterphoto(p,utilisateur);
                 aff();
 
                 reset();

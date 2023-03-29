@@ -88,7 +88,7 @@ Evenement e = new Evenement();
     /**
      * Initializes the controller class.
      */
-    
+    private int userId;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -283,9 +283,9 @@ date_affiche.setText(dateString);
 
     @FXML
     private void acceuil(MouseEvent event) {
-        try {
+     try {
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+            Parent loader = FXMLLoader.load(getClass().getResource("login.fxml"));
             acceuil_btn.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

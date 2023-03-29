@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -78,6 +79,10 @@ public class AffichemodifsuppController implements Initializable {
     private TableColumn<Utilisateur, String> dntab;
     @FXML
     private Button exit;
+    @FXML
+    private Button trier;
+    @FXML
+    private Button retour;
 
     
     @Override
@@ -300,5 +305,40 @@ public class AffichemodifsuppController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
+
+    @FXML
+    private void trier(ActionEvent event) {
+        List<Utilisateur> utilisateurs = us.getAll();
+        ObservableList<Utilisateur> list = FXCollections.observableArrayList(utilisateurs);  
+        
+        idtab.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nomtab.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenomtab.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        roletab.setCellValueFactory(new PropertyValueFactory<>("role"));
+        teltab.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+        emailtab.setCellValueFactory(new PropertyValueFactory<>("email"));
+        mdptab.setCellValueFactory(new PropertyValueFactory<>("mot_de_passe"));
+        tabuser.setItems(list);
+        Comparator <Utilisateur> comparator = Comparator.comparing(Utilisateur::getNom).thenComparing(Utilisateur::getPrenom).thenComparing(Utilisateur::getRole).thenComparing(Utilisateur::getTelephone).thenComparing(Utilisateur::getEmail).thenComparing(Utilisateur::getMot_de_passe);
+        tabuser.getItems().sort(comparator);
+        
+        
+    }
+
+    @FXML
+    private void retour(ActionEvent event) {
+        
+        try {
+            
+            Parent loader = FXMLLoader.load(getClass().getResource("emptyy.fxml"));
+            exit.getScene().setRoot(loader);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+    }
+        
+    }
     
-}
+

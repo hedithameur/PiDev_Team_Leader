@@ -81,26 +81,36 @@ ServiceInstrument si = new ServiceInstrument ();
 
     @FXML
     private void ajouter(ActionEvent event) {
-         try {
-            Parent loader;
-            loader = FXMLLoader.load(getClass().getResource("cotéclient.fxml"));
-            ajoutiid.getScene().setRoot(loader);
+                      try {
+                     
+            //navigation
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("Cotéclient.fxml"));
+    Parent root = loader.load();
+    
+ CotéclientController clientController = loader.getController();
+    clientController.setUserId(userId);
+    
+    ajoutiid.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-         
-    }
+        }
 }
 
     @FXML
     private void retourdash(ActionEvent event) {
-        try {
-            Parent loader;
-            loader = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
-            retourdash.getScene().setRoot(loader);
+                         try {
+                     
+            //navigation
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("Acceuil.fxml"));
+    Parent root = loader.load();
+    
+ AcceuilController acceuilController = loader.getController();
+    acceuilController.setUserId(userId);
+    
+    retourdash.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        
-    }
+        }
 }
     
 }

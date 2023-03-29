@@ -239,7 +239,7 @@ TabRec.setItems(filteredList);
     @FXML
     private void retour(ActionEvent event) throws IOException {
         try{
-         Parent loader = FXMLLoader.load(getClass().getResource("AjouterReclamation.fxml"));
+               Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
             idretour.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

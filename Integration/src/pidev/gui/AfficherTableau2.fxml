@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="461.0" prefWidth="700.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AfficherTableau2Controller">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AfficherTableau2Controller">
    <children>
-      <TableView fx:id="tab" layoutX="269.0" layoutY="104.0" onMouseClicked="#handlemouse1" onSort="#afftab" prefHeight="200.0" prefWidth="417.0">
+      <TableView fx:id="tab" layoutX="367.0" layoutY="107.0" onMouseClicked="#handlemouse1" onSort="#afftab" prefHeight="289.0" prefWidth="550.0">
         <columns>
           <TableColumn fx:id="idc" prefWidth="103.0" text="Id_Comm" />
           <TableColumn fx:id="idd" prefWidth="98.0" text="Date" />
@@ -25,25 +25,25 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="292.0" layoutY="14.0" prefHeight="48.0" prefWidth="280.0" text="Voici tous les Commentaires :" textFill="#ef6b48">
+      <Label layoutX="351.0" layoutY="14.0" prefHeight="48.0" prefWidth="280.0" text="Voici tous les Commentaires :" textFill="#ef6b48">
          <font>
             <Font name="Bernard MT Condensed" size="25.0" />
          </font>
       </Label>
       <DatePicker fx:id="iddate" layoutX="79.0" layoutY="118.0" promptText="0000/00/00" />
-      <Button fx:id="supprimer" layoutX="455.0" layoutY="323.0" mnemonicParsing="false" onAction="#supp" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #ef6b48;" text="supprimer" textFill="#fcfafa">
+      <Button fx:id="supprimer" layoutX="533.0" layoutY="434.0" mnemonicParsing="false" onAction="#supp" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #ef6b48;" text="supprimer" textFill="#fcfafa">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="modif" layoutX="137.0" layoutY="325.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#ebebeb">
+      <Button fx:id="modif" layoutX="70.0" layoutY="357.0" mnemonicParsing="false" onAction="#modifier" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#ebebeb">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="idreset" layoutX="214.0" layoutY="307.0" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#f2eded">
+      <Button fx:id="idreset" layoutX="269.0" layoutY="173.0" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#f2eded">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font></Button>
       <TextField fx:id="idid" layoutX="83.0" layoutY="279.0" prefHeight="25.0" prefWidth="174.0" promptText="Id_Rec" />
       <Label layoutX="38.0" layoutY="122.0" text="Date :" textFill="#eeeaea">
@@ -68,23 +68,23 @@
          </font>
       </Label>
       <TextField fx:id="idrech" layoutX="413.0" layoutY="69.0" prefHeight="25.0" prefWidth="167.0" promptText="Recherche" />
-      <Button fx:id="idreset2" layoutX="314.0" layoutY="323.0" mnemonicParsing="false" onAction="#reset2" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #ef6b48;" text="Reset Table" textFill="#f2eded">
+      <Button fx:id="idreset2" layoutX="805.0" layoutY="72.0" mnemonicParsing="false" onAction="#reset2" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #ef6b48;" text="Reset Table" textFill="#f2eded">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font></Button>
-      <Button fx:id="idpdf1" layoutX="600.0" layoutY="322.0" mnemonicParsing="false" onAction="#pdf1" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #ef6b48;" text="PDF" textFill="#f2eeee">
+      <Button fx:id="idpdf1" layoutX="944.0" layoutY="368.0" mnemonicParsing="false" onAction="#pdf1" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #ef6b48;" text="PDF" textFill="#f2eeee">
          <font>
             <Font name="Algerian" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idtri1" layoutX="352.0" layoutY="379.0" mnemonicParsing="false" onAction="#trierpardate" prefHeight="35.0" prefWidth="113.0" style="-fx-background-color: #ef6b48;" text="Trier par date" textFill="#eeecec">
+      <Button fx:id="idtri1" layoutX="357.0" layoutY="434.0" mnemonicParsing="false" onAction="#trierpardate" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: #ef6b48;" text="Trier par date" textFill="#eeecec">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="idtri2" layoutX="509.0" layoutY="380.0" mnemonicParsing="false" onAction="#trierparcontenu" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #ef6b48;" text="Trier par Contenu" textFill="#f8f7f7">
+      <Button fx:id="idtri2" layoutX="669.0" layoutY="434.0" mnemonicParsing="false" onAction="#trierparcontenu" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #ef6b48;" text="Trier par Contenu" textFill="#f8f7f7">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
    </children>

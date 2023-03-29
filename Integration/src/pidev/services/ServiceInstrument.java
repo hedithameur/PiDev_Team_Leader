@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import pidev.entity.CategorieInstrument;
 import pidev.entity.Instrument;
+import pidev.entity.Utilisateur;
 import pidev.tools.MaConnection;
 
 /**
@@ -44,15 +45,16 @@ public class ServiceInstrument implements Interface<Instrument> {
         }
     }
 
-    public void ajouterphoto(Instrument t) {
+    public void ajouterphoto(Instrument t,Utilisateur u) {
         try {
-            String sql = "INSERT INTO instruments ( `nom` , `prix`, `photo`,`description`,`id_categorie`)  VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO instruments ( `nom` , `prix`, `photo`,`description`,`id_categorie`,`id_utilisateur`)  VALUES (?,?,?,?,?,?)";
             PreparedStatement ste = cnx.prepareStatement(sql);
             ste.setString(1, t.getNom());
             ste.setFloat(2, t.getPrix());
             ste.setString(3, t.getPhoto());
             ste.setString(4, t.getDescription());
             ste.setInt(5, t.getCategorie().getId());
+            ste.setInt(6, u.getId());
             ste.executeUpdate();
             System.out.println("Intrument ajoutée");
         } catch (SQLException ex) {

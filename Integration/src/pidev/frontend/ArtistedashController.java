@@ -24,10 +24,12 @@ import javafx.scene.control.Label;
 public class ArtistedashController implements Initializable {
 
     @FXML
-    private Label labelnom;
-    @FXML
     private Button deconnexion;
-
+private int userId;
+    @FXML
+    private Button addEvent;
+    @FXML
+    private Button musicAdd;
     /**
      * Initializes the controller class.
      */
@@ -35,7 +37,10 @@ public class ArtistedashController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+     public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
     @FXML
     private void gotoglobal(ActionEvent event) {
         
@@ -47,6 +52,44 @@ public class ArtistedashController implements Initializable {
         catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    @FXML
+    private void AddEvent(ActionEvent event) {
+            try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterEvenementFXML.fxml"));
+    Parent root = loader.load();
+    
+    AjouterEvenementFXMLController ADDeventController = loader.getController();
+    ADDeventController.setUserId( userId);
+            addEvent.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        
+    }
+
+    @FXML
+    private void AddMusic(ActionEvent event) {
+            try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterMusic.fxml"));
+    Parent root = loader.load();
+    
+    AjouterMusicController Controller = loader.getController();
+    Controller.setUserId( userId);
+            musicAdd.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        
+        
+        
     }
     
 }

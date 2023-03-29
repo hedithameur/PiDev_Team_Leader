@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="710.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.CommenterController">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.CommenterController">
    <children>
-      <ComboBox fx:id="idchoix" layoutX="161.0" layoutY="76.0" prefWidth="150.0" promptText="Choisir ID" />
+      <ComboBox fx:id="idchoix" layoutX="167.0" layoutY="73.0" prefWidth="150.0" promptText="Choisir ID" />
       <Label layoutX="4.0" layoutY="78.0" text="ID Reclamation :" textFill="#f8efef">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -32,22 +32,22 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="228.0" layoutY="25.0" text="Ajouter Commentaire :" textFill="#c6eb10">
+      <Label layoutX="380.0" layoutY="26.0" text="Ajouter Commentaire :" textFill="#c6eb10">
          <font>
             <Font name="Bauhaus 93" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="aj" layoutX="517.0" layoutY="188.0" mnemonicParsing="false" onAction="#ajout" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Ajouter" textFill="#fffafa">
+      <Button fx:id="aj" layoutX="541.0" layoutY="217.0" mnemonicParsing="false" onAction="#ajout" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Ajouter" textFill="#fffafa">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="aff" layoutX="517.0" layoutY="121.0" mnemonicParsing="false" onAction="#afficher" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Afficher" textFill="#f7f7f8">
+      <Button fx:id="aff" layoutX="545.0" layoutY="144.0" mnemonicParsing="false" onAction="#afficher" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #ef6b48;" text="Afficher" textFill="#f7f7f8">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="mod" layoutX="112.0" layoutY="385.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#f0eff5">
+      <Button fx:id="mod" layoutX="109.0" layoutY="436.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#f0eff5">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -62,7 +62,7 @@
             </Lighting>
          </effect>
       </Button>
-      <Button fx:id="supp" layoutX="592.0" layoutY="385.0" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: red;" text="Supprimer" textFill="#fffefe">
+      <Button fx:id="supp" layoutX="739.0" layoutY="395.0" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: red;" text="Supprimer" textFill="#fffefe">
          <effect>
             <Lighting>
                <bumpInput>
@@ -77,23 +77,23 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="405.0" layoutY="361.0" text="Veuillez supprimer un commentaire :" textFill="#f8f7f7">
+      <Label layoutX="534.0" layoutY="360.0" text="Veuillez supprimer un commentaire :" textFill="#f8f7f7">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="360.0" text="Pour modifier un commentaire Cliquez sur :" textFill="#eee8e8">
+      <Label layoutX="24.0" layoutY="395.0" text="Pour modifier un commentaire Cliquez sur :" textFill="#eee8e8">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="idcho" layoutX="446.0" layoutY="384.0" prefHeight="25.0" prefWidth="143.0" promptText="Choisir ID" />
-      <Button fx:id="retour2" layoutX="49.0" layoutY="27.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #ef6b48;" text="Retour" textFill="#f8f5f5">
+      <ComboBox fx:id="idcho" layoutX="577.0" layoutY="392.0" prefHeight="25.0" prefWidth="143.0" promptText="Choisir ID" />
+      <Button fx:id="retour2" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#retour" prefHeight="32.0" prefWidth="99.0" style="-fx-background-color: #ef6b48;" text="Retour" textFill="#f8f5f5">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="res" layoutX="552.0" layoutY="264.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="68.0" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#fff7f7">
+      <Button fx:id="res" layoutX="561.0" layoutY="264.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="68.0" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#fff7f7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -102,7 +102,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="358.0" layoutY="387.0" prefHeight="20.0" prefWidth="76.0" text="ID Comm :" textFill="#fcf8f8">
+      <Label layoutX="469.0" layoutY="405.0" prefHeight="20.0" prefWidth="76.0" text="ID Comm :" textFill="#fcf8f8">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -122,12 +122,12 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button fx:id="idpub" layoutX="383.0" layoutY="440.0" mnemonicParsing="false" onAction="#publier" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #ef6b48;" text="PUBLIER" textFill="#fffdfd">
+      <Button fx:id="idpub" layoutX="465.0" layoutY="529.0" mnemonicParsing="false" onAction="#publier" prefHeight="30.0" prefWidth="124.0" style="-fx-background-color: #ef6b48;" text="PUBLIER" textFill="#fffdfd">
          <font>
             <Font name="Algerian" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="37.0" layoutY="445.0" prefHeight="21.0" prefWidth="338.0" text="Pour publier une information aux utilisateurs :" textFill="#f5f0f0">
+      <Label layoutX="42.0" layoutY="534.0" prefHeight="21.0" prefWidth="338.0" text="Pour publier une information aux utilisateurs :" textFill="#f5f0f0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

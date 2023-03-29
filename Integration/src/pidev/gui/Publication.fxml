@@ -6,27 +6,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.PublicationController">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.PublicationController">
    <children>
-      <Label layoutX="28.0" layoutY="134.0" prefHeight="25.0" prefWidth="126.0" text="Text à Publier :" textFill="#f5f0f0">
+      <Label layoutX="28.0" layoutY="134.0" prefHeight="35.0" prefWidth="180.0" text="Text à Publier :" textFill="#f5f0f0">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="206.0" layoutY="14.0" prefHeight="73.0" prefWidth="295.0" text="Publication :" textFill="#b0db12">
+      <Label layoutX="406.0" layoutY="14.0" prefHeight="73.0" prefWidth="295.0" text="Publication :" textFill="#b0db12">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextArea fx:id="idtext" layoutX="165.0" layoutY="100.0" prefHeight="121.0" prefWidth="281.0" promptText="text..." />
-      <Button fx:id="idenv" layoutX="248.0" layoutY="260.0" mnemonicParsing="false" onAction="#envoyerEmail" prefHeight="46.0" prefWidth="105.0" style="-fx-background-color: #ef6b48;" text="Envoyer" textFill="#fcf5f5">
+      <TextArea fx:id="idtext" layoutX="256.0" layoutY="111.0" prefHeight="304.0" prefWidth="651.0" promptText="text..." />
+      <Button fx:id="idenv" layoutX="740.0" layoutY="501.0" mnemonicParsing="false" onAction="#envoyerEmail" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #ef6b48;" text="Envoyer" textFill="#fcf5f5">
          <font>
-            <Font name="Algerian" size="15.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="ret" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#retout" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #ef6b48;" text="Retour" textFill="#e1dddd">
+      <Button fx:id="ret" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#retout" prefHeight="39.0" prefWidth="132.0" style="-fx-background-color: #ef6b48;" text="Retour" textFill="#e1dddd">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font></Button>
    </children>
 </AnchorPane>

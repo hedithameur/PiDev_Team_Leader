@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
 import pidev.entity.Playlist;
 import pidev.entity.Utilisateur;
 import pidev.services.PlayListService;
@@ -123,22 +124,32 @@ Utilisateur u = new Utilisateur();
 
     @FXML
     private void retour(ActionEvent event) {
-            try {
-            //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("dashmembre.fxml"));
-            retour.getScene().setRoot(loader);
-        } catch (IOException ex) {
+                try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashmembre.fxml"));
+    Parent root = loader.load();
+    
+    DashmembreController membreController = loader.getController();
+    membreController.setUserId( userId);
+            retour.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
 
     @FXML
     private void doawnloadVideo(ActionEvent event) {
-             try {
-            //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("../API/youtubeDownloader.fxml"));
-            download.getScene().setRoot(loader);
-        } catch (IOException ex) {
+                 try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("YoutubeDownloader.fxml"));
+    Parent root = loader.load();
+    
+     YoutubeDownloaderController youtubeController = loader.getController();
+    youtubeController.setUserId( userId);
+            download.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
         
@@ -147,11 +158,16 @@ Utilisateur u = new Utilisateur();
     @FXML
     private void ecouterMusic(ActionEvent event) {
         
-            try {
-            //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("../API/MusicPlay.fxml"));
-            ecouterMusic.getScene().setRoot(loader);
-        } catch (IOException ex) {
+                  try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("MusicPlay.fxml"));
+    Parent root = loader.load();
+    
+    MusicPlayController MusicController = loader.getController();
+    MusicController.setUserId( userId);
+            ecouterMusic.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }

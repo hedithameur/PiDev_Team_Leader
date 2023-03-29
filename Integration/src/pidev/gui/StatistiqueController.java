@@ -5,6 +5,7 @@
  */
 package pidev.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +17,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
+import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import pidev.tools.MaConnection;
 
@@ -36,6 +41,8 @@ public class StatistiqueController implements Initializable {
     private ResultSet rs;
     private Connection  cnx;
     ObservableList<PieChart.Data>data=FXCollections.observableArrayList();
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -74,5 +81,17 @@ public class StatistiqueController implements Initializable {
        
     
     }
+
+    @FXML
+    private void backToMenu(ActionEvent event) {
+              try {
+            //navigation
+                   Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
+            back.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
     
 }

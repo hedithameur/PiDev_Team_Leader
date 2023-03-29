@@ -90,12 +90,17 @@ public class ArtisteloginController implements Initializable {
             
             if (resultSet.next()) {
                 String role = resultSet.getString("role");
+                  int  userId = resultSet.getInt("id");
                 if (role.equals("Artiste")) {
                    
                     try {
             
-            Parent loader = FXMLLoader.load(getClass().getResource("artistedash.fxml"));
-            btnseconnecter.getScene().setRoot(loader);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("artistedash.fxml"));
+    Parent root = loader.load();
+    
+    ArtistedashController artisteController = loader.getController();
+    artisteController.setUserId(userId);
+            btnseconnecter.getScene().setRoot(root);
         } 
         catch (IOException ex) {
             System.out.println(ex.getMessage());

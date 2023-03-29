@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pidev.API;
+package pidev.frontend;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -45,7 +45,8 @@ import javafx.scene.control.Alert;
  */
 public class YoutubeDownloaderController implements Initializable {
 private static final String YOUTUBE_DL_COMMAND = "youtube-dl --extract-audio --audio-format mp3 ";
-    @FXML
+private int userId;    
+@FXML
     private TextField textfield;
     @FXML
     private Label label;
@@ -55,7 +56,10 @@ private static final String YOUTUBE_DL_COMMAND = "youtube-dl --extract-audio --a
     private VBox root;
     @FXML
     private Button retour;
-
+     public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
     /**
      * Initializes the controller class.
      */
@@ -91,9 +95,7 @@ private String getVideoIdFromUrl(String url) {
 private String getVideoUrlFromId(String videoId) {
     String videoUrl = null;
     try {
-        YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
-            public void initialize(HttpRequest request) throws IOException {
-            }
+        YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), (HttpRequest request) -> {
         }).setApplicationName("youtube-cmdline-search-sample").build();
         List<String> parts = new ArrayList<>();
 parts.add("snippet");
@@ -101,7 +103,7 @@ parts.add("snippet");
         videosListByIdRequest.setKey(API_KEY);
         
 
-        List<String> videoIds = new ArrayList<String>();
+        List<String> videoIds = new ArrayList<>();
         videoIds.add(videoId);
         videosListByIdRequest.setId(videoIds);
 
@@ -124,16 +126,15 @@ parts.add("snippet");
 private void downloadVideo(String videoUrl) {
     try {
         URL url = new URL(videoUrl);
-        InputStream inputStream = url.openStream();
-        FileOutputStream outputStream = new FileOutputStream("video.mp4");
-
-        byte[] buffer = new byte[1024];
-        int length;
-        while ((length = inputStream.read(buffer)) != -1) {
-            outputStream.write(buffer, 0, length);
+        FileOutputStream outputStream;
+        try (InputStream inputStream = url.openStream()) {
+            outputStream = new FileOutputStream("video.mp4");
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, length);
+            }
         }
-
-        inputStream.close();
         outputStream.close();
 
         System.out.println("Téléchargement terminé avec succès");
@@ -146,10 +147,16 @@ private void downloadVideo(String videoUrl) {
 
     @FXML
     private void retour(ActionEvent event) {
-            try {
+                            try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("../frontend/CreerPlaylist.fxml"));
-            retour.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("CreerPlaylist.fxml"));
+    Parent root = loader.load();
+    
+ CreerPlaylistController creerplaylistController = loader.getController();
+    creerplaylistController.setUserId(userId);
+    
+    retour.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

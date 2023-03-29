@@ -3,47 +3,46 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.MembredashController">
+<AnchorPane id="AnchorPane" fx:id="nouveau" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.MembredashController">
    <children>
-      <Label layoutX="197.0" layoutY="28.0" prefHeight="35.0" prefWidth="181.0" text="Modifier mon profil " textFill="WHITE">
+      <Label layoutX="294.0" layoutY="53.0" prefHeight="53.0" prefWidth="421.0" text="Modifier mon profil " textAlignment="CENTER" textFill="#ef6b48">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="116.0" layoutY="210.0" text="Ancien mot de passe" textFill="WHITE">
+      <Label layoutX="69.0" layoutY="220.0" text="Ancien mot de passe" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="116.0" layoutY="244.0" text="Nouveau mot de passe" textFill="WHITE">
+      <Label layoutX="69.0" layoutY="306.0" text="Nouveau mot de passe" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Button fx:id="btnmodifier" layoutX="270.0" layoutY="305.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="WHITE">
+      <Button fx:id="btnmodifier" layoutX="778.0" layoutY="521.0" mnemonicParsing="false" onAction="#modifier" prefHeight="42.0" prefWidth="153.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="13.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font></Button>
       <Button fx:id="btnexit" layoutX="26.0" layoutY="28.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="61.0" text="Retour" textFill="#f26b0a">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="email" layoutX="278.0" layoutY="171.0" />
-      <ImageView fitHeight="62.0" fitWidth="71.0" layoutX="515.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="71.0" layoutX="943.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="116.0" layoutY="174.0" prefHeight="17.0" prefWidth="45.0" text="Email" textFill="WHITE">
+      <PasswordField fx:id="ancienmdps" layoutX="433.0" layoutY="220.0" prefHeight="42.0" prefWidth="345.0" />
+      <PasswordField fx:id="nouvmdps" layoutX="433.0" layoutY="294.0" prefHeight="42.0" prefWidth="345.0" />
+      <Label layoutX="69.0" layoutY="385.0" prefHeight="27.0" prefWidth="316.0" text="Confirmer nouveau mot de passe" textFill="#e8e6e6">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <PasswordField fx:id="ancienmdps" layoutX="278.0" layoutY="207.0" />
-      <PasswordField fx:id="nouvmdps" layoutX="278.0" layoutY="241.0" />
+      <PasswordField fx:id="nouveaumotdepasse" layoutX="433.0" layoutY="374.0" prefHeight="42.0" prefWidth="345.0" />
    </children>
 </AnchorPane>

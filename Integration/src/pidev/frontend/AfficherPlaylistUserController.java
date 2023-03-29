@@ -6,6 +6,7 @@
 package pidev.frontend;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -13,7 +14,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
@@ -159,6 +162,18 @@ System.out.println("l id playlist " +p.getId_playlist() );
 
     @FXML
     private void back(ActionEvent event) {
+              try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashmembre.fxml"));
+    Parent root = loader.load();
+    
+    DashmembreController membreController = loader.getController();
+    membreController.setUserId(iduser);
+            backup.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @FXML

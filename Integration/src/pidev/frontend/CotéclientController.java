@@ -36,6 +36,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import pidev.entity.CategorieInstrument;
 import pidev.entity.Instrument;
+import pidev.entity.Utilisateur;
 import pidev.gui.InstrumentController;
 import pidev.services.ServiceCategorie;
 import pidev.services.ServiceInstrument;
@@ -47,7 +48,7 @@ import pidev.tools.MaConnection;
  * @author bouzi
  */
 public class CotéclientController implements Initializable {
-
+private int userId;
     @FXML
     private TextField nomid;
     @FXML
@@ -59,7 +60,7 @@ public class CotéclientController implements Initializable {
     @FXML
     private Button importid;
     Connection cnx;
-    
+    Utilisateur u = new Utilisateur();
 ServiceInstrument ps = new ServiceInstrument();
     Instrument p = new Instrument();
     ServiceCategorie m = new ServiceCategorie();
@@ -74,6 +75,11 @@ ServiceInstrument ps = new ServiceInstrument();
     cnx = MaConnection.getInstance().getCnx();
     
 }
+        public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -169,8 +175,8 @@ ServiceInstrument ps = new ServiceInstrument();
                 p.setPrix(Float.parseFloat(prixid.getText()));;
                 p.setPhoto(yar.getText());
                 p.setDescription(descriptionid.getText());
-
-                ps.ajouterphoto(p);
+                  u.setId(userId);
+              ps.ajouterphoto(p,u);
                
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("msg");

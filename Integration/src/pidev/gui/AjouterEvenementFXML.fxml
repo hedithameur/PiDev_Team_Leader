@@ -147,5 +147,10 @@
             <Font name="Times New Roman Bold" size="12.0" />
          </font>
       </Label>
+      <Button fx:id="back" layoutX="55.0" layoutY="443.0" mnemonicParsing="false" onAction="#backTomenu" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #ef6b48;" text="back" textFill="#f8eeee">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

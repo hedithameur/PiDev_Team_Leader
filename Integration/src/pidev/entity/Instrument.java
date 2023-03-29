@@ -23,7 +23,7 @@ public class Instrument {
     String description;
     
     CategorieInstrument categorie ;
-   
+    Utilisateur user ;
     
 
     public Instrument() {
@@ -66,33 +66,25 @@ public class Instrument {
         this.description = description;
         this.categorie = categorie;
     }
+
+    public Instrument(int id_instrument, String nom, float prix, String photo, String description,  Utilisateur user) {
+        this.id_instrument = id_instrument;
+        this.nom = nom;
+        this.prix = prix;
+        this.photo = photo;
+        this.description = description;
     
+        this.user = user;
+    }
 
-  
+    public void setUser(Utilisateur user) {
+        this.user = user;
+    }
 
-   
+    public Utilisateur getUser() {
+        return user;
+    }
     
-
-   
-    
-
-   
-    
-
-   
-   
-
-   
-
-   
-    
-
-   
-   
-
-   
-    
-
     public int getId_instrument() {
         return id_instrument;
     }

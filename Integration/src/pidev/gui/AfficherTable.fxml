@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="719.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AfficherTableController">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.gui.AfficherTableController">
    <children>
-      <TableView fx:id="TabRec" layoutX="243.0" layoutY="102.0" onMouseClicked="#handlemouse" onSort="#affichetab" prefHeight="200.0" prefWidth="458.0">
+      <TableView fx:id="TabRec" layoutX="339.0" layoutY="118.0" onMouseClicked="#handlemouse" onSort="#affichetab" prefHeight="238.0" prefWidth="528.0">
         <columns>
           <TableColumn fx:id="idcolumn" prefWidth="52.0" text="Id" />
           <TableColumn fx:id="datecolumn" prefWidth="88.0" text="Date" />
@@ -30,7 +30,7 @@
             <Font name="Century" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="idsu" layoutX="429.0" layoutY="312.0" mnemonicParsing="false" onAction="#supp" prefHeight="28.0" prefWidth="97.0" style="-fx-background-color: #ef6b48;" text="Supprimer" textFill="#fcf7f7">
+      <Button fx:id="idsu" layoutX="634.0" layoutY="378.0" mnemonicParsing="false" onAction="#supp" prefHeight="28.0" prefWidth="97.0" style="-fx-background-color: #ef6b48;" text="Supprimer" textFill="#fcf7f7">
          <font>
             <Font name="Calibri Light Italic" size="14.0" />
          </font>
@@ -38,12 +38,12 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label layoutX="187.0" text="Voici toutes les Réclamations :" textFill="#c5d106">
+      <Label layoutX="305.0" text="Voici toutes les Réclamations :" textFill="#c5d106">
          <font>
             <Font name="Bodoni MT Black" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="modif" layoutX="15.0" layoutY="363.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#f8f6f6">
+      <Button fx:id="modif" layoutX="75.0" layoutY="368.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Modifier" textFill="#f8f6f6">
          <font>
             <Font size="14.0" />
          </font>
@@ -69,14 +69,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="idtitre" layoutX="54.0" layoutY="137.0" prefHeight="25.0" prefWidth="174.0" promptText="titre" />
-      <TextArea fx:id="iddes" layoutX="77.0" layoutY="175.0" prefHeight="120.0" prefWidth="154.0" promptText="description" />
-      <DatePicker fx:id="iddate" layoutX="53.0" layoutY="98.0" promptText="0000/00/00" />
-      <Button fx:id="idreset" layoutX="178.0" layoutY="367.0" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#f8f1f1">
+      <TextField fx:id="idtitre" layoutX="75.0" layoutY="134.0" prefHeight="25.0" prefWidth="174.0" promptText="titre" />
+      <TextArea fx:id="iddes" layoutX="77.0" layoutY="175.0" prefHeight="131.0" prefWidth="252.0" promptText="description" />
+      <DatePicker fx:id="iddate" layoutX="78.0" layoutY="95.0" promptText="0000/00/00" />
+      <Button fx:id="idreset" layoutX="339.0" layoutY="377.0" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Reset" textFill="#f8f1f1">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <HBox fx:id="hbox" layoutX="164.0" layoutY="43.0" prefHeight="28.0" prefWidth="521.0">
+      <HBox fx:id="hbox" layoutX="164.0" layoutY="43.0" prefHeight="31.0" prefWidth="596.0">
          <children>
             <Label prefHeight="26.0" prefWidth="92.0" text="Recherche par:" textFill="#f8f6f6">
                <font>
@@ -85,22 +85,23 @@
             </Label>
             <ComboBox fx:id="typeRecherche" onAction="#list" prefHeight="100.0" prefWidth="150.0" promptText="Choisir un type" />
             <TextField fx:id="RechercheTextField" onAction="#ecrire" prefHeight="28.0" prefWidth="165.0" promptText="Recherche" />
-            <Button fx:id="search" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #ef6b48;" text="Search" textFill="#f5f4f4">
+            <Button fx:id="search" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Search" textFill="#f5f4f4">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
+               </font>
+            </Button>
          </children>
       </HBox>
-      <Button fx:id="reset" layoutX="570.0" layoutY="71.0" mnemonicParsing="false" onAction="#reset2" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ef6b48;" text="Search Reset" textFill="#fffefe">
+      <Button fx:id="reset" layoutX="568.0" layoutY="83.0" mnemonicParsing="false" onAction="#reset2" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Search Reset" textFill="#fffefe">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="idpdf" layoutX="584.0" layoutY="310.0" mnemonicParsing="false" onAction="#pdf" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: #ef6b48;" text="PDF" textFill="#fcf6f6">
+      <Button fx:id="idpdf" layoutX="836.0" layoutY="382.0" mnemonicParsing="false" onAction="#pdf" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: #ef6b48;" text="PDF" textFill="#fcf6f6">
          <font>
             <Font name="Algerian" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="idtri" layoutX="299.0" layoutY="314.0" mnemonicParsing="false" onAction="#tri" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #ef6b48;" text="Trier" textFill="#fffefe">
+      <Button fx:id="idtri" layoutX="890.0" layoutY="156.0" mnemonicParsing="false" onAction="#tri" prefHeight="3.0" prefWidth="133.0" style="-fx-background-color: #ef6b48;" text="Trier" textFill="#fffefe">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -110,13 +111,13 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="telF" layoutX="74.0" layoutY="304.0" promptText="00000000" />
+      <TextField fx:id="telF" layoutX="82.0" layoutY="316.0" promptText="00000000" />
       <Label fx:id="idlabel20" layoutX="67.0" layoutY="331.0" prefHeight="20.0" prefWidth="185.0" textFill="#f20d0d">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="idcomm" layoutX="416.0" layoutY="398.0" mnemonicParsing="false" onAction="#commenter" prefHeight="28.0" prefWidth="148.0" style="-fx-background-color: #ef6b48;" text="Répondre" textFill="#eeeaea">
+      <Button fx:id="idcomm" layoutX="425.0" layoutY="521.0" mnemonicParsing="false" onAction="#commenter" prefHeight="28.0" prefWidth="148.0" style="-fx-background-color: #ef6b48;" text="Répondre" textFill="#eeeaea">
          <font>
             <Font name="Algerian" size="16.0" />
          </font>
@@ -124,7 +125,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label layoutX="336.0" layoutY="365.0" text="Pour Commenter veuillez cliquer sur :" textFill="#f5f0f0">
+      <Label layoutX="351.0" layoutY="472.0" text="Pour Commenter veuillez cliquer sur :" textFill="#f5f0f0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

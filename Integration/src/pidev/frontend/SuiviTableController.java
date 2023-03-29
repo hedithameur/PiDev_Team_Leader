@@ -75,12 +75,16 @@ public class SuiviTableController implements Initializable {
     private TextField combobox_enter1;
     @FXML
     public TextField champ;
-   
+   private int userId;
 EvenementService es = new EvenementService();
 private ObservableList<Evenement> AllEvents;
     /**
      * Initializes the controller class.
      */
+  public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -98,11 +102,16 @@ private ObservableList<Evenement> AllEvents;
 
     @FXML
     private void backfunc(ActionEvent event) {
-         try {
-            //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("AjouterEvenementFXML.fxml"));
-            back.getScene().setRoot(loader);
-        } catch (IOException ex) {
+                       try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterEvenementFXML.fxml"));
+    Parent root = loader.load();
+    
+    AjouterEvenementFXMLController Controller = loader.getController();
+    Controller.setUserId( userId);
+            back.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }

@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,7 +21,7 @@ import javafx.scene.control.Button;
  * @author user
  */
 public class DashmembreController implements Initializable {
-
+private int userId;
     @FXML
     private Button gerer;
     @FXML
@@ -34,6 +34,11 @@ public class DashmembreController implements Initializable {
     /**
      * Initializes the controller class.
      */
+        public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -41,14 +46,21 @@ public class DashmembreController implements Initializable {
 
     @FXML
     private void gotomembredash(ActionEvent event) {
-            try {
+                     try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("membredash.fxml"));
-            gerer.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("membredash.fxml"));
+    Parent root = loader.load();
+    
+ MembredashController updatepasswordController = loader.getController();
+    updatepasswordController.setUserId(userId);
+    
+    gerer.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
+    
 
     @FXML
     private void deconnectmembre(ActionEvent event) {
@@ -63,21 +75,34 @@ public class DashmembreController implements Initializable {
 
     @FXML
     private void goTOevenement(ActionEvent event) {
-           try {
+                           try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
-            goEvenement.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("Acceuil.fxml"));
+    Parent root = loader.load();
+    
+    AcceuilController AcceuilController = loader.getController();
+    AcceuilController.setUserId(userId);
+    
+    goEvenement.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
+    
 
     @FXML
     private void gomusic(ActionEvent event) {
-            try {
+                    try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("CreerPlaylist.fxml"));
-            music.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("CreerPlaylist.fxml"));
+    Parent root = loader.load();
+    
+    CreerPlaylistController playlistController = loader.getController();
+    playlistController.setUserId(userId);
+    
+    music.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

@@ -154,6 +154,42 @@ public class UtilisateurService implements InterfService<Utilisateur> {
             return ids;
     }
 
+    @Override
+    public String get_mot_de_passe(int id) {
+              String password="";         //    List<Playlist> playlists= new ArrayList<>();
+    try {
+        String sql = "select * from utilisateur where  id=?";
+        PreparedStatement ste = cnx.prepareStatement(sql);
+       
+        ste.setInt(1, id);
+        ResultSet s = ste.executeQuery(); // utilise executeQuery() au lieu de execute()
+        while (s.next()) {
+     password = s.getString("mot_de_passe");
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return password;
+    }
+
+    @Override
+    public String getNomArtiste(int id) {
+                 String nom="";         //    List<Playlist> playlists= new ArrayList<>();
+    try {
+        String sql = "select * from utilisateur where  id=?";
+        PreparedStatement ste = cnx.prepareStatement(sql);
+       
+        ste.setInt(1, id);
+        ResultSet s = ste.executeQuery(); // utilise executeQuery() au lieu de execute()
+        while (s.next()) {
+     nom = s.getString("nom");
+        }
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return nom;
+    }
+
 
 
 

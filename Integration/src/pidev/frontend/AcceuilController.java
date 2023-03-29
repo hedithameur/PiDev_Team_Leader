@@ -35,7 +35,7 @@ import pidev.test.MusicINterface;
  * @author 21650
  */
 public class AcceuilController implements Initializable {
-
+private int userId;
     @FXML
     private VBox cardLayout;
     private List<Evenement> Acceuil;
@@ -54,6 +54,10 @@ EvenementService es =new EvenementService();
     /**
      * Initializes the controller class.
      */
+         public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -93,10 +97,16 @@ EvenementService es =new EvenementService();
 
     @FXML
     private void instrument(ActionEvent event) {
-            try {
+                          try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-            btn_instru.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+    Parent root = loader.load();
+    
+    DashboardController DashboardController = loader.getController();
+    DashboardController.setUserId(userId);
+    
+    btn_instru.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -136,10 +146,16 @@ EvenementService es =new EvenementService();
 
     @FXML
     private void retourdashborad(ActionEvent event) {
-            try {
+                                try {
+                     
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("dashmembre.fxml"));
-            retour.getScene().setRoot(loader);
+              FXMLLoader loader = new FXMLLoader(getClass().getResource("dashmembre.fxml"));
+    Parent root = loader.load();
+    
+ DashmembreController membreController = loader.getController();
+    membreController.setUserId(userId);
+    
+    retour.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

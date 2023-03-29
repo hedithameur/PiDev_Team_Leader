@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.AjouterEvenementFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1000.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.AjouterEvenementFXMLController">
    <children>
       <HBox layoutX="72.0" layoutY="197.0" prefHeight="100.0" prefWidth="915.0">
          <children>
@@ -24,7 +24,7 @@
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nom_artiste" promptText="Nom d'artiste">
+                  <TextField fx:id="nom_artiste" disable="true" promptText="Nom d'artiste">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -139,7 +139,7 @@
       </Button>
       <ImageView fitHeight="55.0" fitWidth="62.0" layoutX="65.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../ressources/logo.png" />
+            <Image url="@logo.png" />
          </image>
       </ImageView>
       <Label fx:id="control" layoutX="452.0" layoutY="138.0" textFill="#f7f5f5">
@@ -147,5 +147,10 @@
             <Font name="Times New Roman Bold" size="12.0" />
          </font>
       </Label>
+      <Button fx:id="retour" layoutX="60.0" layoutY="419.0" mnemonicParsing="false" onAction="#RetourArtisteDash" style="-fx-background-color: #ef6b48;" text="retour" textFill="#e4e3e3">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

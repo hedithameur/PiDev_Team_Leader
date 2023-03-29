@@ -41,6 +41,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pidev.entity.Evenement;
 import pidev.services.EvenementService;
+import pidev.services.UtilisateurService;
 
 /**
  * FXML Controller class
@@ -48,7 +49,7 @@ import pidev.services.EvenementService;
  * @author 21650
  */
 public class AjouterEvenementFXMLController implements Initializable {
-
+private int userId;
     @FXML
     private TextField nom_artiste;
     @FXML
@@ -75,7 +76,12 @@ public class AjouterEvenementFXMLController implements Initializable {
     private Label control;
 EvenementService es = new EvenementService();
 String nomPath;
-
+    @FXML
+    private Button retour;
+   public void setUserId(int userId) {
+        this.userId = userId;
+       System.out.println("UserID "+ userId);
+    }
     /**
      * Initializes the controller class.
      */
@@ -99,7 +105,7 @@ String nomPath;
                 
                 is = new FileInputStream(new File(f.getAbsolutePath()));
 //             
-                os = new FileOutputStream(new File("C:\\Users\\21650\\Desktop\\PiDev\\src\\pidev\\ressources\\" + f.getName()));
+                os = new FileOutputStream(new File("C:\\Users\\user\\Documents\\NetBeansProjects\\Integration\\ressources" + f.getName()));
                 byte[] buffer = new byte[1024];
                 int length;
                 while ((length = is.read(buffer)) > 0) {
@@ -126,7 +132,8 @@ String nomPath;
         
         
                 label_affiche.setText("/ressources/" + f.getName());
-
+       UtilisateurService u = new UtilisateurService();
+nom_artiste.setText(u.getNomArtiste(userId));
     }
 
     @FXML
@@ -181,23 +188,39 @@ String nomPath;
 
     @FXML
     private void btn_suivi(ActionEvent event) {
-         try {
-        
+                     try {
             
-            Parent loader = FXMLLoader.load(getClass().getResource("../frontend/SuiviTable.fxml"));
-            
-            // Scene scene = new Scene(loader, 300, 250);
-             btn_suivi.getScene().setRoot(loader);
-           // primaryStage.setTitle("Suivi Evenement");
-            //primaryStage.setScene(scene);
-            //primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(EventFXMain.class.getName()).log(Level.SEVERE, null, ex);
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("SuiviTable.fxml"));
+    Parent root = loader.load();
+    
+    SuiviTableController Controller = loader.getController();
+    Controller.setUserId( userId);
+            btn_suivi.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 
     @FXML
     private void btn_historique(ActionEvent event) {
+    }
+
+    @FXML
+    private void RetourArtisteDash(ActionEvent event) {
+                     try {
+            
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("artistedash.fxml"));
+    Parent root = loader.load();
+    
+    ArtistedashController Controller = loader.getController();
+    Controller.setUserId( userId);
+            retour.getScene().setRoot(root);
+        } 
+        catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
     }
     
 }

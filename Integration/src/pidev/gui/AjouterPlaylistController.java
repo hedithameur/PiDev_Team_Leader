@@ -66,7 +66,7 @@ UtilisateurService U = new UtilisateurService();
     comboUser.setItems(o);
     String selected = comboUser.getValue();
     if (!o.isEmpty()) {
-   comboUser.setValue(o.get(0));
+   comboUser.setValue(o.get(0));    
     }
     }    
 

@@ -75,6 +75,8 @@ public class AjouterEvenementFXMLController implements Initializable {
     private Label control;
 EvenementService es = new EvenementService();
 String nomPath;
+    @FXML
+    private Button back;
 
     /**
      * Initializes the controller class.
@@ -199,5 +201,18 @@ String nomPath;
     @FXML
     private void btn_historique(ActionEvent event) {
     }
+
+    @FXML
+    private void backTomenu(ActionEvent event) {
+                       try {
+            //navigation
+            Parent loader = FXMLLoader.load(getClass().getResource("../Integration/IntegrationAceuil.fxml"));
+            back.getScene().setRoot(loader);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+        
+    }
     
-}
+

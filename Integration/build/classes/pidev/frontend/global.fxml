@@ -8,32 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.GlobalController">
+<AnchorPane id="AnchorPane" prefHeight="766.0" prefWidth="1053.0" style="-fx-background-color: #182052;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.frontend.GlobalController">
    <children>
-      <Button fx:id="btnartiste" layoutX="25.0" layoutY="112.0" mnemonicParsing="false" onAction="#gotoartiste" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #ef6b48;" text="Espace artistes " textFill="WHITE">
+      <Button fx:id="btnartiste" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" onAction="#gotoartiste" prefHeight="58.0" prefWidth="369.0" style="-fx-background-color: #ef6b48;" text="Espace artistes " textFill="WHITE">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="btnmembre" layoutX="319.0" layoutY="112.0" mnemonicParsing="false" onAction="#gotomembre" prefHeight="43.0" prefWidth="260.0" style="-fx-background-color: #ef6b48;" text="Espace membres" textFill="WHITE">
+      <Button fx:id="btnmembre" layoutX="639.0" layoutY="203.0" mnemonicParsing="false" onAction="#gotomembre" prefHeight="58.0" prefWidth="369.0" style="-fx-background-color: #ef6b48;" text="Espace membres" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <ImageView fitHeight="198.0" fitWidth="317.0" layoutX="155.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="390.0" fitWidth="590.0" layoutX="252.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@event.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="113.0" layoutY="22.0" prefHeight="43.0" prefWidth="318.0" text="                     D A Y      E V E N T" textFill="WHITE">
+      <Label layoutX="39.0" layoutY="28.0" prefHeight="70.0" prefWidth="703.0" text="                     D A Y      E V E N T" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="48.0" />
          </font>
       </Label>
-      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="522.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="84.0" layoutX="944.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo.png" />
          </image>

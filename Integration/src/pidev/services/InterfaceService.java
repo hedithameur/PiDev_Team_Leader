@@ -14,4 +14,5 @@ public interface InterfaceService <T>{
     public List<T> getAll();
     public List<T> findById(int id);
     public List<Integer> getid();
+   
 }

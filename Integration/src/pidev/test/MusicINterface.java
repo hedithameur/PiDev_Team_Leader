@@ -5,6 +5,8 @@
  */
 package pidev.test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +18,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -27,7 +31,7 @@ public class MusicINterface extends Application {
     
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
        
        Parent root = null;
         try {
@@ -36,17 +40,26 @@ public class MusicINterface extends Application {
          
 
 //root = FXMLLoader.load(getClass().getResource("../API/youtubeDownloader.fxml"));
-                 //  root = FXMLLoader.load(getClass().getResource("../gui/AfficherPlaylist.fxml"));
-                  root = FXMLLoader.load(getClass().getResource("../frontend/global.fxml"));
-               //  root = FXMLLoader.load(getClass().getResource("../frontend/AjouterEvenementFXML.fxml"));
+//                root = FXMLLoader.load(getClass().getResource("../gui/instrument.fxml"));
+               root = FXMLLoader.load(getClass().getResource("../frontend/global.fxml"));
+              // root = FXMLLoader.load(getClass().getResource("../gui/Instrument.fxml"));
                  
                   
         } catch (IOException ex) {
             Logger.getLogger( MusicINterface.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Scene scene = new Scene(root,1200, 900);
         
-        primaryStage.setTitle("Day Event");
+       /* ImageView titleImage = new ImageView(new Image("file:logo6.png"));
+StackPane stackPane = new StackPane();
+stackPane.getChildren().addAll(titleImage, root);
+        */
+       FileInputStream input = new FileInputStream("C:\\Users\\user\\Documents\\NetBeansProjects\\Integration\\src\\pidev\\test\\logo6.png");
+        Image image =new Image (input);
+        
+        
+        Scene scene = new Scene(root,1200, 900);
+        primaryStage.getIcons().add(image);
+        primaryStage.setTitle("  Day Event");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
